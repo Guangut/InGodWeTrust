@@ -444,8 +444,13 @@ class ComposerStaticInit855d890ad6f8126c618922c69a4ae044
         ),
         'League\\Uri\\' => 
         array (
+<<<<<<< HEAD
             0 => __DIR__ . '/..' . '/league/uri',
             1 => __DIR__ . '/..' . '/league/uri-interfaces',
+=======
+            0 => __DIR__ . '/..' . '/league/uri-interfaces',
+            1 => __DIR__ . '/..' . '/league/uri',
+>>>>>>> upstream/main
         ),
         'League\\MimeTypeDetection\\' => 
         array (
@@ -1946,7 +1951,10 @@ class ComposerStaticInit855d890ad6f8126c618922c69a4ae044
         'Illuminate\\Contracts\\Foundation\\MaintenanceMode' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Foundation/MaintenanceMode.php',
         'Illuminate\\Contracts\\Hashing\\Hasher' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Hashing/Hasher.php',
         'Illuminate\\Contracts\\Http\\Kernel' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Http/Kernel.php',
+<<<<<<< HEAD
         'Illuminate\\Contracts\\Log\\ContextLogProcessor' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Log/ContextLogProcessor.php',
+=======
+>>>>>>> upstream/main
         'Illuminate\\Contracts\\Mail\\Attachable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Mail/Attachable.php',
         'Illuminate\\Contracts\\Mail\\Factory' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Mail/Factory.php',
         'Illuminate\\Contracts\\Mail\\MailQueue' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Mail/MailQueue.php',
@@ -2000,7 +2008,10 @@ class ComposerStaticInit855d890ad6f8126c618922c69a4ae044
         'Illuminate\\Contracts\\Translation\\HasLocalePreference' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Translation/HasLocalePreference.php',
         'Illuminate\\Contracts\\Translation\\Loader' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Translation/Loader.php',
         'Illuminate\\Contracts\\Translation\\Translator' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Translation/Translator.php',
+<<<<<<< HEAD
         'Illuminate\\Contracts\\Validation\\CompilableRules' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Validation/CompilableRules.php',
+=======
+>>>>>>> upstream/main
         'Illuminate\\Contracts\\Validation\\DataAwareRule' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Validation/DataAwareRule.php',
         'Illuminate\\Contracts\\Validation\\Factory' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Validation/Factory.php',
         'Illuminate\\Contracts\\Validation\\ImplicitRule' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Validation/ImplicitRule.php',
@@ -2484,12 +2495,18 @@ class ComposerStaticInit855d890ad6f8126c618922c69a4ae044
         'Illuminate\\Http\\Resources\\PotentiallyMissing' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Http/Resources/PotentiallyMissing.php',
         'Illuminate\\Http\\Response' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Http/Response.php',
         'Illuminate\\Http\\ResponseTrait' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Http/ResponseTrait.php',
+<<<<<<< HEAD
         'Illuminate\\Http\\StreamedEvent' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Http/StreamedEvent.php',
+=======
+>>>>>>> upstream/main
         'Illuminate\\Http\\Testing\\File' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Http/Testing/File.php',
         'Illuminate\\Http\\Testing\\FileFactory' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Http/Testing/FileFactory.php',
         'Illuminate\\Http\\Testing\\MimeType' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Http/Testing/MimeType.php',
         'Illuminate\\Http\\UploadedFile' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Http/UploadedFile.php',
+<<<<<<< HEAD
         'Illuminate\\Log\\Context\\ContextLogProcessor' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Log/Context/ContextLogProcessor.php',
+=======
+>>>>>>> upstream/main
         'Illuminate\\Log\\Context\\ContextServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Log/Context/ContextServiceProvider.php',
         'Illuminate\\Log\\Context\\Events\\ContextDehydrating' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Log/Context/Events/ContextDehydrating.php',
         'Illuminate\\Log\\Context\\Events\\ContextHydrated' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Log/Context/Events/ContextHydrated.php',

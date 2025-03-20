@@ -116,8 +116,13 @@ class FakeInvokedProcess implements InvokedProcessContract
         $this->invokeOutputHandlerWithNextLineOfOutput();
 
         $this->remainingRunIterations = is_null($this->remainingRunIterations)
+<<<<<<< HEAD
             ? $this->process->runIterations
             : $this->remainingRunIterations;
+=======
+                ? $this->process->runIterations
+                : $this->remainingRunIterations;
+>>>>>>> upstream/main
 
         if ($this->remainingRunIterations === 0) {
             while ($this->invokeOutputHandlerWithNextLineOfOutput()) {

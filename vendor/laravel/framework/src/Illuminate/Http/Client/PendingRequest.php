@@ -794,7 +794,11 @@ class PendingRequest
      * Issue a POST request to the given URL.
      *
      * @param  string  $url
+<<<<<<< HEAD
      * @param  array|\JsonSerializable|\Illuminate\Contracts\Support\Arrayable  $data
+=======
+     * @param  array  $data
+>>>>>>> upstream/main
      * @return \Illuminate\Http\Client\Response
      *
      * @throws \Illuminate\Http\Client\ConnectionException
@@ -810,7 +814,11 @@ class PendingRequest
      * Issue a PATCH request to the given URL.
      *
      * @param  string  $url
+<<<<<<< HEAD
      * @param  array|\JsonSerializable|\Illuminate\Contracts\Support\Arrayable  $data
+=======
+     * @param  array  $data
+>>>>>>> upstream/main
      * @return \Illuminate\Http\Client\Response
      *
      * @throws \Illuminate\Http\Client\ConnectionException
@@ -826,7 +834,11 @@ class PendingRequest
      * Issue a PUT request to the given URL.
      *
      * @param  string  $url
+<<<<<<< HEAD
      * @param  array|\JsonSerializable|\Illuminate\Contracts\Support\Arrayable  $data
+=======
+     * @param  array  $data
+>>>>>>> upstream/main
      * @return \Illuminate\Http\Client\Response
      *
      * @throws \Illuminate\Http\Client\ConnectionException
@@ -842,7 +854,11 @@ class PendingRequest
      * Issue a DELETE request to the given URL.
      *
      * @param  string  $url
+<<<<<<< HEAD
      * @param  array|\JsonSerializable|\Illuminate\Contracts\Support\Arrayable  $data
+=======
+     * @param  array  $data
+>>>>>>> upstream/main
      * @return \Illuminate\Http\Client\Response
      *
      * @throws \Illuminate\Http\Client\ConnectionException
@@ -911,7 +927,11 @@ class PendingRequest
 
                     if (! $response->successful()) {
                         try {
+<<<<<<< HEAD
                             $shouldRetry = $this->retryWhenCallback ? call_user_func($this->retryWhenCallback, $response->toException(), $this, $this->request->toPsrRequest()->getMethod()) : true;
+=======
+                            $shouldRetry = $this->retryWhenCallback ? call_user_func($this->retryWhenCallback, $response->toException(), $this) : true;
+>>>>>>> upstream/main
                         } catch (Exception $exception) {
                             $shouldRetry = false;
 
@@ -948,7 +968,11 @@ class PendingRequest
                 throw $exception;
             }
         }, $this->retryDelay ?? 100, function ($exception) use (&$shouldRetry) {
+<<<<<<< HEAD
             $result = $shouldRetry ?? ($this->retryWhenCallback ? call_user_func($this->retryWhenCallback, $exception, $this, $this->request->toPsrRequest()->getMethod()) : true);
+=======
+            $result = $shouldRetry ?? ($this->retryWhenCallback ? call_user_func($this->retryWhenCallback, $exception, $this) : true);
+>>>>>>> upstream/main
 
             $shouldRetry = null;
 
@@ -991,6 +1015,7 @@ class PendingRequest
             $options[$this->bodyFormat] = $this->pendingBody;
         }
 
+<<<<<<< HEAD
         return (new Collection($options))
             ->map(function ($value, $key) {
                 if ($key === 'json' && $value instanceof JsonSerializable) {
@@ -1000,6 +1025,15 @@ class PendingRequest
                 return $value instanceof Arrayable ? $value->toArray() : $value;
             })
             ->all();
+=======
+        return (new Collection($options))->map(function ($value, $key) {
+            if ($key === 'json' && $value instanceof JsonSerializable) {
+                return $value;
+            }
+
+            return $value instanceof Arrayable ? $value->toArray() : $value;
+        })->all();
+>>>>>>> upstream/main
     }
 
     /**

@@ -437,8 +437,13 @@ class Migrator
 
         $this->getSchemaGrammar($connection)->supportsSchemaTransactions()
             && $migration->withinTransaction
+<<<<<<< HEAD
                 ? $connection->transaction($callback)
                 : $callback();
+=======
+                    ? $connection->transaction($callback)
+                    : $callback();
+>>>>>>> upstream/main
     }
 
     /**
@@ -541,8 +546,13 @@ class Migrator
 
         if (is_object($migration)) {
             return method_exists($migration, '__construct')
+<<<<<<< HEAD
                 ? $this->files->getRequire($path)
                 : clone $migration;
+=======
+                    ? $this->files->getRequire($path)
+                    : clone $migration;
+>>>>>>> upstream/main
         }
 
         return new $class;

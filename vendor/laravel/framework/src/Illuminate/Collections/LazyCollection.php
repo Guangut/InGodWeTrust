@@ -1376,28 +1376,42 @@ class LazyCollection implements CanBeEscapedWhenCastToString, Enumerable
      * Chunk the collection into chunks of the given size.
      *
      * @param  int  $size
+<<<<<<< HEAD
      * @param  bool  $preserveKeys
      * @return ($preserveKeys is true ? static<int, static> : static<int, static<int, TValue>>)
      */
     public function chunk($size, $preserveKeys = true)
+=======
+     * @return static<int, static>
+     */
+    public function chunk($size)
+>>>>>>> upstream/main
     {
         if ($size <= 0) {
             return static::empty();
         }
 
+<<<<<<< HEAD
         $add = match ($preserveKeys) {
             true => fn (array &$chunk, Traversable $iterator) => $chunk[$iterator->key()] = $iterator->current(),
             false => fn (array &$chunk, Traversable $iterator) => $chunk[] = $iterator->current(),
         };
 
         return new static(function () use ($size, $add) {
+=======
+        return new static(function () use ($size) {
+>>>>>>> upstream/main
             $iterator = $this->getIterator();
 
             while ($iterator->valid()) {
                 $chunk = [];
 
                 while (true) {
+<<<<<<< HEAD
                     $add($chunk, $iterator);
+=======
+                    $chunk[$iterator->key()] = $iterator->current();
+>>>>>>> upstream/main
 
                     if (count($chunk) < $size) {
                         $iterator->next();

@@ -19,8 +19,13 @@ trait InteractsWithTime
         $delay = $this->parseDateInterval($delay);
 
         return $delay instanceof DateTimeInterface
+<<<<<<< HEAD
             ? max(0, $delay->getTimestamp() - $this->currentTime())
             : (int) $delay;
+=======
+                            ? max(0, $delay->getTimestamp() - $this->currentTime())
+                            : (int) $delay;
+>>>>>>> upstream/main
     }
 
     /**
@@ -34,8 +39,13 @@ trait InteractsWithTime
         $delay = $this->parseDateInterval($delay);
 
         return $delay instanceof DateTimeInterface
+<<<<<<< HEAD
             ? $delay->getTimestamp()
             : Carbon::now()->addSeconds($delay)->getTimestamp();
+=======
+                            ? $delay->getTimestamp()
+                            : Carbon::now()->addSeconds($delay)->getTimestamp();
+>>>>>>> upstream/main
     }
 
     /**

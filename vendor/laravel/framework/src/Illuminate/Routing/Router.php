@@ -630,8 +630,12 @@ class Router implements BindingRegistrar, RegistrarContract
         $group = end($this->groupStack);
 
         return isset($group['namespace']) && ! str_starts_with($class, '\\') && ! str_starts_with($class, $group['namespace'])
+<<<<<<< HEAD
             ? $group['namespace'].'\\'.$class
             : $class;
+=======
+                ? $group['namespace'].'\\'.$class : $class;
+>>>>>>> upstream/main
     }
 
     /**
@@ -830,6 +834,7 @@ class Router implements BindingRegistrar, RegistrarContract
      */
     public function resolveMiddleware(array $middleware, array $excluded = [])
     {
+<<<<<<< HEAD
         $excluded = $excluded === []
             ? $excluded
             : (new Collection($excluded))
@@ -863,6 +868,37 @@ class Router implements BindingRegistrar, RegistrarContract
                     );
                 })
             )->values();
+=======
+        $excluded = (new Collection($excluded))->map(function ($name) {
+            return (array) MiddlewareNameResolver::resolve($name, $this->middleware, $this->middlewareGroups);
+        })->flatten()->values()->all();
+
+        $middleware = (new Collection($middleware))->map(function ($name) {
+            return (array) MiddlewareNameResolver::resolve($name, $this->middleware, $this->middlewareGroups);
+        })->flatten()->reject(function ($name) use ($excluded) {
+            if (empty($excluded)) {
+                return false;
+            }
+
+            if ($name instanceof Closure) {
+                return false;
+            }
+
+            if (in_array($name, $excluded, true)) {
+                return true;
+            }
+
+            if (! class_exists($name)) {
+                return false;
+            }
+
+            $reflection = new ReflectionClass($name);
+
+            return (new Collection($excluded))->contains(
+                fn ($exclude) => class_exists($exclude) && $reflection->isSubclassOf($exclude)
+            );
+        })->values();
+>>>>>>> upstream/main
 
         return $this->sortMiddleware($middleware);
     }

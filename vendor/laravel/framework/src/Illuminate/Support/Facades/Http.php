@@ -14,7 +14,10 @@ use Illuminate\Http\Client\Factory;
  * @method static \Illuminate\Http\Client\ResponseSequence sequence(array $responses = [])
  * @method static bool preventingStrayRequests()
  * @method static \Illuminate\Http\Client\Factory allowStrayRequests()
+<<<<<<< HEAD
  * @method static \Illuminate\Http\Client\Factory record()
+=======
+>>>>>>> upstream/main
  * @method static void recordRequestResponsePair(\Illuminate\Http\Client\Request $request, \Illuminate\Http\Client\Response|null $response)
  * @method static void assertSent(callable $callback)
  * @method static void assertSentInOrder(array $callbacks)
@@ -70,10 +73,17 @@ use Illuminate\Http\Client\Factory;
  * @method static \Illuminate\Http\Client\PendingRequest dd()
  * @method static \Illuminate\Http\Client\Response get(string $url, array|string|null $query = null)
  * @method static \Illuminate\Http\Client\Response head(string $url, array|string|null $query = null)
+<<<<<<< HEAD
  * @method static \Illuminate\Http\Client\Response post(string $url, array|\JsonSerializable|\Illuminate\Contracts\Support\Arrayable $data = [])
  * @method static \Illuminate\Http\Client\Response patch(string $url, array|\JsonSerializable|\Illuminate\Contracts\Support\Arrayable $data = [])
  * @method static \Illuminate\Http\Client\Response put(string $url, array|\JsonSerializable|\Illuminate\Contracts\Support\Arrayable $data = [])
  * @method static \Illuminate\Http\Client\Response delete(string $url, array|\JsonSerializable|\Illuminate\Contracts\Support\Arrayable $data = [])
+=======
+ * @method static \Illuminate\Http\Client\Response post(string $url, array $data = [])
+ * @method static \Illuminate\Http\Client\Response patch(string $url, array $data = [])
+ * @method static \Illuminate\Http\Client\Response put(string $url, array $data = [])
+ * @method static \Illuminate\Http\Client\Response delete(string $url, array $data = [])
+>>>>>>> upstream/main
  * @method static array pool(callable $callback)
  * @method static \Illuminate\Http\Client\Response send(string $method, string $url, array $options = [])
  * @method static \GuzzleHttp\Client buildClient()

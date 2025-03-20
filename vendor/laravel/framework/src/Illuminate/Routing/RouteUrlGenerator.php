@@ -164,8 +164,12 @@ class RouteUrlGenerator
         $port = (int) $this->request->getPort();
 
         return ($secure && $port === 443) || (! $secure && $port === 80)
+<<<<<<< HEAD
             ? $domain
             : $domain.':'.$port;
+=======
+                    ? $domain : $domain.':'.$port;
+>>>>>>> upstream/main
     }
 
     /**
@@ -201,8 +205,13 @@ class RouteUrlGenerator
             $parameters = array_merge($parameters);
 
             return (! isset($parameters[0]) && ! str_ends_with($match[0], '?}'))
+<<<<<<< HEAD
                 ? $match[0]
                 : Arr::pull($parameters, 0);
+=======
+                        ? $match[0]
+                        : Arr::pull($parameters, 0);
+>>>>>>> upstream/main
         }, $path);
 
         return trim(preg_replace('/\{.*?\?\}/', '', $path), '/');

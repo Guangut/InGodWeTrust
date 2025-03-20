@@ -33,12 +33,21 @@ class DatabaseChannel
         return [
             'id' => $notification->id,
             'type' => method_exists($notification, 'databaseType')
+<<<<<<< HEAD
                 ? $notification->databaseType($notifiable)
                 : get_class($notification),
             'data' => $this->getData($notifiable, $notification),
             'read_at' => method_exists($notification, 'initialDatabaseReadAtValue')
                 ? $notification->initialDatabaseReadAtValue($notifiable)
                 : null,
+=======
+                        ? $notification->databaseType($notifiable)
+                        : get_class($notification),
+            'data' => $this->getData($notifiable, $notification),
+            'read_at' => method_exists($notification, 'initialDatabaseReadAtValue')
+                        ? $notification->initialDatabaseReadAtValue($notifiable)
+                        : null,
+>>>>>>> upstream/main
         ];
     }
 
@@ -55,8 +64,12 @@ class DatabaseChannel
     {
         if (method_exists($notification, 'toDatabase')) {
             return is_array($data = $notification->toDatabase($notifiable))
+<<<<<<< HEAD
                 ? $data
                 : $data->data;
+=======
+                                ? $data : $data->data;
+>>>>>>> upstream/main
         }
 
         if (method_exists($notification, 'toArray')) {

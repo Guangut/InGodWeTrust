@@ -104,8 +104,13 @@ class Factory
 
         foreach ($callback as $command => $handler) {
             $this->fakeHandlers[is_numeric($command) ? '*' : $command] = $handler instanceof Closure
+<<<<<<< HEAD
                 ? $handler
                 : fn () => $handler;
+=======
+                    ? $handler
+                    : fn () => $handler;
+>>>>>>> upstream/main
         }
 
         return $this;

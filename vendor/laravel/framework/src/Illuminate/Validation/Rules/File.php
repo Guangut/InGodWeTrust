@@ -217,8 +217,11 @@ class File implements Rule, DataAwareRule, ValidatorAwareRule
             return $size;
         }
 
+<<<<<<< HEAD
         $size = strtolower(trim($size));
 
+=======
+>>>>>>> upstream/main
         $value = floatval($size);
 
         return round(match (true) {

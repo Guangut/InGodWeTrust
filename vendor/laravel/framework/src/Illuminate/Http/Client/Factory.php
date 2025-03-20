@@ -322,7 +322,11 @@ class Factory
      *
      * @return $this
      */
+<<<<<<< HEAD
     public function record()
+=======
+    protected function record()
+>>>>>>> upstream/main
     {
         $this->recording = true;
 

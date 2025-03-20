@@ -124,8 +124,13 @@ class EventServiceProvider extends ServiceProvider
     protected function discoveredEvents()
     {
         return $this->shouldDiscoverEvents()
+<<<<<<< HEAD
             ? $this->discoverEvents()
             : [];
+=======
+                    ? $this->discoverEvents()
+                    : [];
+>>>>>>> upstream/main
     }
 
     /**

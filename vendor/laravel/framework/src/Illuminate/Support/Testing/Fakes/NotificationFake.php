@@ -279,7 +279,11 @@ class NotificationFake implements Fake, NotificationDispatcher, NotificationFact
      */
     protected function notificationsFor($notifiable, $notification)
     {
+<<<<<<< HEAD
         return $this->notifications[get_class($notifiable)][(string) $notifiable->getKey()][$notification] ?? [];
+=======
+        return $this->notifications[get_class($notifiable)][$notifiable->getKey()][$notification] ?? [];
+>>>>>>> upstream/main
     }
 
     /**
@@ -326,7 +330,11 @@ class NotificationFake implements Fake, NotificationDispatcher, NotificationFact
                 continue;
             }
 
+<<<<<<< HEAD
             $this->notifications[get_class($notifiable)][(string) $notifiable->getKey()][get_class($notification)][] = [
+=======
+            $this->notifications[get_class($notifiable)][$notifiable->getKey()][get_class($notification)][] = [
+>>>>>>> upstream/main
                 'notification' => $this->serializeAndRestore && $notification instanceof ShouldQueue
                     ? $this->serializeAndRestoreNotification($notification)
                     : $notification,

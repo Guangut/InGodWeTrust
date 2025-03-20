@@ -3,7 +3,11 @@
         'name' => 'laravel/vue-starter-kit',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
+<<<<<<< HEAD
         'reference' => 'f0a69d1eea5687eaccb3c687bdbb176ee9b63404',
+=======
+        'reference' => 'd0ff09028ac338441e43609daeb3222428bf4ed3',
+>>>>>>> upstream/main
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -20,9 +24,15 @@
             'dev_requirement' => true,
         ),
         'brick/math' => array(
+<<<<<<< HEAD
             'pretty_version' => '0.12.3',
             'version' => '0.12.3.0',
             'reference' => '866551da34e9a618e64a819ee1e01c20d8a588ba',
+=======
+            'pretty_version' => '0.12.2',
+            'version' => '0.12.2.0',
+            'reference' => '901eddb1e45a8e0f689302e40af871c181ecbe40',
+>>>>>>> upstream/main
             'type' => 'library',
             'install_path' => __DIR__ . '/../brick/math',
             'aliases' => array(),
@@ -122,9 +132,15 @@
             'dev_requirement' => true,
         ),
         'filp/whoops' => array(
+<<<<<<< HEAD
             'pretty_version' => '2.18.0',
             'version' => '2.18.0.0',
             'reference' => 'a7de6c3c6c3c022f5cfc337f8ede6a14460cf77e',
+=======
+            'pretty_version' => '2.17.0',
+            'version' => '2.17.0.0',
+            'reference' => '075bc0c26631110584175de6523ab3f1652eb28e',
+>>>>>>> upstream/main
             'type' => 'library',
             'install_path' => __DIR__ . '/../filp/whoops',
             'aliases' => array(),
@@ -196,205 +212,341 @@
         'illuminate/auth' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/broadcasting' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/bus' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/cache' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/collections' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/concurrency' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/conditionable' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/config' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/console' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/container' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/contracts' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/cookie' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/database' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/encryption' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/events' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/filesystem' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/hashing' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/http' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/log' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/macroable' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/mail' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/notifications' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/pagination' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/pipeline' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/process' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/queue' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/redis' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/routing' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/session' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/support' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/testing' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/translation' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/validation' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'illuminate/view' => array(
             'dev_requirement' => false,
             'replaced' => array(
+<<<<<<< HEAD
                 0 => 'v12.3.0',
+=======
+                0 => 'v12.0.1',
+>>>>>>> upstream/main
             ),
         ),
         'inertiajs/inertia-laravel' => array(
@@ -407,9 +559,15 @@
             'dev_requirement' => false,
         ),
         'jean85/pretty-package-versions' => array(
+<<<<<<< HEAD
             'pretty_version' => '2.1.1',
             'version' => '2.1.1.0',
             'reference' => '4d7aa5dab42e2a76d99559706022885de0e18e1a',
+=======
+            'pretty_version' => '2.1.0',
+            'version' => '2.1.0.0',
+            'reference' => '3c4e5f62ba8d7de1734312e4fff32f67a8daaf10',
+>>>>>>> upstream/main
             'type' => 'library',
             'install_path' => __DIR__ . '/../jean85/pretty-package-versions',
             'aliases' => array(),
@@ -422,9 +580,15 @@
             ),
         ),
         'laravel/framework' => array(
+<<<<<<< HEAD
             'pretty_version' => 'v12.3.0',
             'version' => '12.3.0.0',
             'reference' => 'ca0412e978f78ecea0cafbe34dd8b18010064f73',
+=======
+            'pretty_version' => 'v12.0.1',
+            'version' => '12.0.1.0',
+            'reference' => 'd99e2385a6d4324782d52f4423891966425641be',
+>>>>>>> upstream/main
             'type' => 'library',
             'install_path' => __DIR__ . '/../laravel/framework',
             'aliases' => array(),
@@ -440,9 +604,15 @@
             'dev_requirement' => true,
         ),
         'laravel/pint' => array(
+<<<<<<< HEAD
             'pretty_version' => 'v1.21.2',
             'version' => '1.21.2.0',
             'reference' => '370772e7d9e9da087678a0edf2b11b6960e40558',
+=======
+            'pretty_version' => 'v1.21.0',
+            'version' => '1.21.0.0',
+            'reference' => '531fa0871fbde719c51b12afa3a443b8f4e4b425',
+>>>>>>> upstream/main
             'type' => 'project',
             'install_path' => __DIR__ . '/../laravel/pint',
             'aliases' => array(),
@@ -487,7 +657,11 @@
         'laravel/vue-starter-kit' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
+<<<<<<< HEAD
             'reference' => 'f0a69d1eea5687eaccb3c687bdbb176ee9b63404',
+=======
+            'reference' => 'd0ff09028ac338441e43609daeb3222428bf4ed3',
+>>>>>>> upstream/main
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -626,9 +800,15 @@
             'dev_requirement' => false,
         ),
         'nunomaduro/collision' => array(
+<<<<<<< HEAD
             'pretty_version' => 'v8.7.0',
             'version' => '8.7.0.0',
             'reference' => '586cb8181a257a2152b6a855ca8d9598878a1a26',
+=======
+            'pretty_version' => 'v8.6.1',
+            'version' => '8.6.1.0',
+            'reference' => '86f003c132143d5a2ab214e19933946409e0cae7',
+>>>>>>> upstream/main
             'type' => 'library',
             'install_path' => __DIR__ . '/../nunomaduro/collision',
             'aliases' => array(),
@@ -927,9 +1107,15 @@
             ),
         ),
         'psy/psysh' => array(
+<<<<<<< HEAD
             'pretty_version' => 'v0.12.8',
             'version' => '0.12.8.0',
             'reference' => '85057ceedee50c49d4f6ecaff73ee96adb3b3625',
+=======
+            'pretty_version' => 'v0.12.7',
+            'version' => '0.12.7.0',
+            'reference' => 'd73fa3c74918ef4522bb8a3bf9cab39161c4b57c',
+>>>>>>> upstream/main
             'type' => 'library',
             'install_path' => __DIR__ . '/../psy/psysh',
             'aliases' => array(),
@@ -945,9 +1131,15 @@
             'dev_requirement' => false,
         ),
         'ramsey/collection' => array(
+<<<<<<< HEAD
             'pretty_version' => '2.1.0',
             'version' => '2.1.0.0',
             'reference' => '3c5990b8a5e0b79cd1cf11c2dc1229e58e93f109',
+=======
+            'pretty_version' => '2.0.0',
+            'version' => '2.0.0.0',
+            'reference' => 'a4b48764bfbb8f3a6a4d1aeb1a35bb5e9ecac4a5',
+>>>>>>> upstream/main
             'type' => 'library',
             'install_path' => __DIR__ . '/../ramsey/collection',
             'aliases' => array(),
@@ -978,9 +1170,15 @@
             'dev_requirement' => true,
         ),
         'sebastian/code-unit' => array(
+<<<<<<< HEAD
             'pretty_version' => '3.0.3',
             'version' => '3.0.3.0',
             'reference' => '54391c61e4af8078e5b276ab082b6d3c54c9ad64',
+=======
+            'pretty_version' => '3.0.2',
+            'version' => '3.0.2.0',
+            'reference' => 'ee88b0cdbe74cf8dd3b54940ff17643c0d6543ca',
+>>>>>>> upstream/main
             'type' => 'library',
             'install_path' => __DIR__ . '/../sebastian/code-unit',
             'aliases' => array(),
@@ -996,9 +1194,15 @@
             'dev_requirement' => true,
         ),
         'sebastian/comparator' => array(
+<<<<<<< HEAD
             'pretty_version' => '6.3.1',
             'version' => '6.3.1.0',
             'reference' => '24b8fbc2c8e201bb1308e7b05148d6ab393b6959',
+=======
+            'pretty_version' => '6.3.0',
+            'version' => '6.3.0.0',
+            'reference' => 'd4e47a769525c4dd38cea90e5dcd435ddbbc7115',
+>>>>>>> upstream/main
             'type' => 'library',
             'install_path' => __DIR__ . '/../sebastian/comparator',
             'aliases' => array(),
@@ -1086,9 +1290,15 @@
             'dev_requirement' => true,
         ),
         'sebastian/type' => array(
+<<<<<<< HEAD
             'pretty_version' => '5.1.2',
             'version' => '5.1.2.0',
             'reference' => 'a8a7e30534b0eb0c77cd9d07e82de1a114389f5e',
+=======
+            'pretty_version' => '5.1.0',
+            'version' => '5.1.0.0',
+            'reference' => '461b9c5da241511a2a0e8f240814fb23ce5c0aac',
+>>>>>>> upstream/main
             'type' => 'library',
             'install_path' => __DIR__ . '/../sebastian/type',
             'aliases' => array(),
@@ -1410,9 +1620,15 @@
             'dev_requirement' => true,
         ),
         'tightenco/ziggy' => array(
+<<<<<<< HEAD
             'pretty_version' => 'v2.5.2',
             'version' => '2.5.2.0',
             'reference' => 'd59dbb61dc0a1d9abb2130451b9e5e0f264bfe1c',
+=======
+            'pretty_version' => 'v2.5.1',
+            'version' => '2.5.1.0',
+            'reference' => '40df446f6053787edb245381c3b3d80b031b5fc0',
+>>>>>>> upstream/main
             'type' => 'library',
             'install_path' => __DIR__ . '/../tightenco/ziggy',
             'aliases' => array(),

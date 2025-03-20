@@ -381,11 +381,17 @@ class MySqlGrammar extends Grammar
             'collation' => $column['collation'],
             'comment' => $column['comment'],
             'virtualAs' => ! is_null($column['generation']) && $column['generation']['type'] === 'virtual'
+<<<<<<< HEAD
                 ? $column['generation']['expression']
                 : null,
             'storedAs' => ! is_null($column['generation']) && $column['generation']['type'] === 'stored'
                 ? $column['generation']['expression']
                 : null,
+=======
+                ? $column['generation']['expression'] : null,
+            'storedAs' => ! is_null($column['generation']) && $column['generation']['type'] === 'stored'
+                ? $column['generation']['expression'] : null,
+>>>>>>> upstream/main
         ]));
 
         return sprintf('alter table %s change %s %s %s',
@@ -655,7 +661,11 @@ class MySqlGrammar extends Grammar
      */
     public function compileDropAllTables($tables)
     {
+<<<<<<< HEAD
         return 'drop table '.implode(', ', $this->escapeNames($tables));
+=======
+        return 'drop table '.implode(',', $this->wrapArray($tables));
+>>>>>>> upstream/main
     }
 
     /**
@@ -666,7 +676,11 @@ class MySqlGrammar extends Grammar
      */
     public function compileDropAllViews($views)
     {
+<<<<<<< HEAD
         return 'drop view '.implode(', ', $this->escapeNames($views));
+=======
+        return 'drop view '.implode(',', $this->wrapArray($views));
+>>>>>>> upstream/main
     }
 
     /**
@@ -705,6 +719,7 @@ class MySqlGrammar extends Grammar
     }
 
     /**
+<<<<<<< HEAD
      * Quote-escape the given tables, views, or types.
      *
      * @param  array  $names
@@ -719,6 +734,8 @@ class MySqlGrammar extends Grammar
     }
 
     /**
+=======
+>>>>>>> upstream/main
      * Create the column definition for a char type.
      *
      * @param  \Illuminate\Support\Fluent  $column

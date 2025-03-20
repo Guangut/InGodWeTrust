@@ -185,7 +185,11 @@ trait InteractsWithQueue
             PHPUnit::assertEquals(
                 $exception->getMessage(),
                 $this->job->failedWith->getMessage(),
+<<<<<<< HEAD
                 'Expected exception message ['.$exception->getMessage().'] but job failed with exception message ['.$this->job->failedWith->getMessage().'].');
+=======
+                'Expected exceptoin message ['.$exception->getMessage().'] but job failed with exception message ['.$this->job->failedWith->getMessage().'].');
+>>>>>>> upstream/main
         }
 
         return $this;

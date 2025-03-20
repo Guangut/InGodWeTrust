@@ -2,6 +2,7 @@
 
 All notable changes are documented in this file using the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+<<<<<<< HEAD
 ## [5.1.2] - 2025-03-18
 
 ### Fixed
@@ -14,6 +15,8 @@ All notable changes are documented in this file using the [Keep a CHANGELOG](htt
 
 * [#33](https://github.com/sebastianbergmann/type/issues/33): `ReflectionMapper` does not handle unions that contain `iterable` correctly
 
+=======
+>>>>>>> upstream/main
 ## [5.1.0] - 2024-09-17
 
 ### Added
@@ -183,8 +186,11 @@ All notable changes are documented in this file using the [Keep a CHANGELOG](htt
 
 * Initial release based on [code contributed by Michel Hartmann to PHPUnit](https://github.com/sebastianbergmann/phpunit/pull/3673)
 
+<<<<<<< HEAD
 [5.1.2]: https://github.com/sebastianbergmann/type/compare/5.1.1...5.1.2
 [5.1.1]: https://github.com/sebastianbergmann/type/compare/5.1.0...5.1.1
+=======
+>>>>>>> upstream/main
 [5.1.0]: https://github.com/sebastianbergmann/type/compare/5.0.1...5.1.0
 [5.0.1]: https://github.com/sebastianbergmann/type/compare/5.0.0...5.0.1
 [5.0.0]: https://github.com/sebastianbergmann/type/compare/4.0...5.0.0

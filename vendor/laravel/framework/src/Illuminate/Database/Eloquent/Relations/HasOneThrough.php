@@ -2,6 +2,7 @@
 
 namespace Illuminate\Database\Eloquent\Relations;
 
+<<<<<<< HEAD
 use Illuminate\Contracts\Database\Eloquent\SupportsPartialRelations;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
@@ -11,6 +12,12 @@ use Illuminate\Database\Eloquent\Relations\Concerns\ComparesRelatedModels;
 use Illuminate\Database\Eloquent\Relations\Concerns\InteractsWithDictionary;
 use Illuminate\Database\Eloquent\Relations\Concerns\SupportsDefaultModels;
 use Illuminate\Database\Query\JoinClause;
+=======
+use Illuminate\Database\Eloquent\Collection as EloquentCollection;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Concerns\InteractsWithDictionary;
+use Illuminate\Database\Eloquent\Relations\Concerns\SupportsDefaultModels;
+>>>>>>> upstream/main
 
 /**
  * @template TRelatedModel of \Illuminate\Database\Eloquent\Model
@@ -19,17 +26,26 @@ use Illuminate\Database\Query\JoinClause;
  *
  * @extends \Illuminate\Database\Eloquent\Relations\HasOneOrManyThrough<TRelatedModel, TIntermediateModel, TDeclaringModel, ?TRelatedModel>
  */
+<<<<<<< HEAD
 class HasOneThrough extends HasOneOrManyThrough implements SupportsPartialRelations
 {
     use ComparesRelatedModels, CanBeOneOfMany, InteractsWithDictionary, SupportsDefaultModels;
+=======
+class HasOneThrough extends HasOneOrManyThrough
+{
+    use InteractsWithDictionary, SupportsDefaultModels;
+>>>>>>> upstream/main
 
     /** @inheritDoc */
     public function getResults()
     {
+<<<<<<< HEAD
         if (is_null($this->getParentKey())) {
             return $this->getDefaultFor($this->farParent);
         }
 
+=======
+>>>>>>> upstream/main
         return $this->first() ?: $this->getDefaultFor($this->farParent);
     }
 
@@ -63,6 +79,7 @@ class HasOneThrough extends HasOneOrManyThrough implements SupportsPartialRelati
         return $models;
     }
 
+<<<<<<< HEAD
     /** @inheritDoc */
     public function getRelationExistenceQuery(Builder $query, Builder $parentQuery, $columns = ['*'])
     {
@@ -93,6 +110,8 @@ class HasOneThrough extends HasOneOrManyThrough implements SupportsPartialRelati
         $join->on($this->qualifySubSelectColumn($this->firstKey), '=', $this->getQualifiedFirstKeyName());
     }
 
+=======
+>>>>>>> upstream/main
     /**
      * Make a new related instance for the given model.
      *
@@ -103,6 +122,7 @@ class HasOneThrough extends HasOneOrManyThrough implements SupportsPartialRelati
     {
         return $this->related->newInstance();
     }
+<<<<<<< HEAD
 
     /** @inheritDoc */
     protected function getRelatedKeyFrom(Model $model)
@@ -115,4 +135,6 @@ class HasOneThrough extends HasOneOrManyThrough implements SupportsPartialRelati
     {
         return $this->farParent->getAttribute($this->localKey);
     }
+=======
+>>>>>>> upstream/main
 }

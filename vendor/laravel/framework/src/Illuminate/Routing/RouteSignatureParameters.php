@@ -19,12 +19,21 @@ class RouteSignatureParameters
     public static function fromAction(array $action, $conditions = [])
     {
         $callback = RouteAction::containsSerializedClosure($action)
+<<<<<<< HEAD
             ? unserialize($action['uses'])->getClosure()
             : $action['uses'];
 
         $parameters = is_string($callback)
             ? static::fromClassMethodString($callback)
             : (new ReflectionFunction($callback))->getParameters();
+=======
+                        ? unserialize($action['uses'])->getClosure()
+                        : $action['uses'];
+
+        $parameters = is_string($callback)
+                        ? static::fromClassMethodString($callback)
+                        : (new ReflectionFunction($callback))->getParameters();
+>>>>>>> upstream/main
 
         return match (true) {
             ! empty($conditions['subClass']) => array_filter($parameters, fn ($p) => Reflector::isParameterSubclassOf($p, $conditions['subClass'])),

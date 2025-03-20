@@ -183,6 +183,7 @@ Zepto(function($) {
     setActiveFramesTab($(this));
   });
 
+<<<<<<< HEAD
     // Open editor from code block rows number
   $(document).delegate('.line-numbers-rows > span', 'click', function(e) {
     var linkTag = $(this).closest('.frame-code').find('.editor-link');
@@ -207,6 +208,8 @@ Zepto(function($) {
     }
   });
 
+=======
+>>>>>>> upstream/main
   // Render late enough for highlightCurrentLine to be ready
   renderCurrentCodeblock();
 });

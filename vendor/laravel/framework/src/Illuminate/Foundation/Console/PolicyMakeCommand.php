@@ -161,8 +161,13 @@ class PolicyMakeCommand extends GeneratorCommand
     protected function getStub()
     {
         return $this->option('model')
+<<<<<<< HEAD
             ? $this->resolveStubPath('/stubs/policy.stub')
             : $this->resolveStubPath('/stubs/policy.plain.stub');
+=======
+                    ? $this->resolveStubPath('/stubs/policy.stub')
+                    : $this->resolveStubPath('/stubs/policy.plain.stub');
+>>>>>>> upstream/main
     }
 
     /**
@@ -174,8 +179,13 @@ class PolicyMakeCommand extends GeneratorCommand
     protected function resolveStubPath($stub)
     {
         return file_exists($customPath = $this->laravel->basePath(trim($stub, '/')))
+<<<<<<< HEAD
             ? $customPath
             : __DIR__.$stub;
+=======
+                        ? $customPath
+                        : __DIR__.$stub;
+>>>>>>> upstream/main
     }
 
     /**

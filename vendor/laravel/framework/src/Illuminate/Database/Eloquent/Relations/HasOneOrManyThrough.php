@@ -168,8 +168,12 @@ abstract class HasOneOrManyThrough extends Relation
         $this->whereInEager(
             $whereIn,
             $this->getQualifiedFirstKeyName(),
+<<<<<<< HEAD
             $this->getKeys($models, $this->localKey),
             $this->getRelationQuery(),
+=======
+            $this->getKeys($models, $this->localKey)
+>>>>>>> upstream/main
         );
     }
 
@@ -469,7 +473,11 @@ abstract class HasOneOrManyThrough extends Relation
      * @param  array  $columns
      * @param  string  $pageName
      * @param  int  $page
+<<<<<<< HEAD
      * @return \Illuminate\Pagination\LengthAwarePaginator
+=======
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+>>>>>>> upstream/main
      */
     public function paginate($perPage = null, $columns = ['*'], $pageName = 'page', $page = null)
     {

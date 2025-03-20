@@ -100,8 +100,13 @@ class ListenCommand extends Command
     protected function gatherOptions()
     {
         $backoff = $this->hasOption('backoff')
+<<<<<<< HEAD
             ? $this->option('backoff')
             : $this->option('delay');
+=======
+                ? $this->option('backoff')
+                : $this->option('delay');
+>>>>>>> upstream/main
 
         return new ListenerOptions(
             name: $this->option('name'),

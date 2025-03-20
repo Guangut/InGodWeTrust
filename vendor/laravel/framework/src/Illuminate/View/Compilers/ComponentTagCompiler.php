@@ -337,8 +337,13 @@ class ComponentTagCompiler
                 }
 
                 $formattedComponent = str_starts_with($component, $path['prefix'].$delimiter)
+<<<<<<< HEAD
                     ? Str::after($component, $delimiter)
                     : $component;
+=======
+                        ? Str::after($component, $delimiter)
+                        : $component;
+>>>>>>> upstream/main
 
                 if (! is_null($guess = match (true) {
                     $viewFactory->exists($guess = $path['prefixHash'].$delimiter.$formattedComponent) => $guess,
@@ -485,8 +490,13 @@ class ComponentTagCompiler
         $constructor = (new ReflectionClass($class))->getConstructor();
 
         $parameterNames = $constructor
+<<<<<<< HEAD
             ? (new Collection($constructor->getParameters()))->map->getName()->all()
             : [];
+=======
+                    ? (new Collection($constructor->getParameters()))->map->getName()->all()
+                    : [];
+>>>>>>> upstream/main
 
         return (new Collection($attributes))
             ->partition(fn ($value, $key) => in_array(Str::camel($key), $parameterNames))
@@ -772,8 +782,13 @@ class ComponentTagCompiler
             }
 
             return $token[0] === T_INLINE_HTML
+<<<<<<< HEAD
                 ? str_replace("'", "\\'", $token[1])
                 : $token[1];
+=======
+                        ? str_replace("'", "\\'", $token[1])
+                        : $token[1];
+>>>>>>> upstream/main
         })->implode('');
     }
 
@@ -789,8 +804,13 @@ class ComponentTagCompiler
         return (new Collection($attributes))
             ->map(function (string $value, string $attribute) use ($escapeBound) {
                 return $escapeBound && isset($this->boundAttributes[$attribute]) && $value !== 'true' && ! is_numeric($value)
+<<<<<<< HEAD
                     ? "'{$attribute}' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute({$value})"
                     : "'{$attribute}' => {$value}";
+=======
+                            ? "'{$attribute}' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute({$value})"
+                            : "'{$attribute}' => {$value}";
+>>>>>>> upstream/main
             })
             ->implode(',');
     }
@@ -804,7 +824,12 @@ class ComponentTagCompiler
     public function stripQuotes(string $value)
     {
         return Str::startsWith($value, ['"', '\''])
+<<<<<<< HEAD
             ? substr($value, 1, -1)
             : $value;
+=======
+                    ? substr($value, 1, -1)
+                    : $value;
+>>>>>>> upstream/main
     }
 }

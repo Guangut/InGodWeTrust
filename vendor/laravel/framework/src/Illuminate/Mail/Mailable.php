@@ -200,8 +200,13 @@ class Mailable implements MailableContract, Renderable
             $this->prepareMailableForDelivery();
 
             $mailer = $mailer instanceof MailFactory
+<<<<<<< HEAD
                 ? $mailer->mailer($this->mailer)
                 : $mailer;
+=======
+                            ? $mailer->mailer($this->mailer)
+                            : $mailer;
+>>>>>>> upstream/main
 
             return $mailer->send($this->buildView(), $this->buildViewData(), function ($message) {
                 $this->buildFrom($message)

@@ -125,8 +125,13 @@ class MigrateMakeCommand extends BaseCommand implements PromptsForMissingInput
     {
         if (! is_null($targetPath = $this->input->getOption('path'))) {
             return ! $this->usingRealPath()
+<<<<<<< HEAD
                 ? $this->laravel->basePath().'/'.$targetPath
                 : $targetPath;
+=======
+                            ? $this->laravel->basePath().'/'.$targetPath
+                            : $targetPath;
+>>>>>>> upstream/main
         }
 
         return parent::getMigrationPath();

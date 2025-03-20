@@ -295,8 +295,13 @@ class View implements ArrayAccess, Htmlable, Stringable, ViewContract
     protected function formatErrors($provider)
     {
         return $provider instanceof MessageProvider
+<<<<<<< HEAD
             ? $provider->getMessageBag()
             : new MessageBag((array) $provider);
+=======
+                        ? $provider->getMessageBag()
+                        : new MessageBag((array) $provider);
+>>>>>>> upstream/main
     }
 
     /**

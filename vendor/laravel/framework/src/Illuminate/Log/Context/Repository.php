@@ -370,6 +370,7 @@ class Repository
     }
 
     /**
+<<<<<<< HEAD
      * Increment a context counter.
      *
      * @param  string  $key
@@ -399,6 +400,8 @@ class Repository
     }
 
     /**
+=======
+>>>>>>> upstream/main
      * Determine if the given value is in the given stack.
      *
      * @param  string  $key
@@ -477,6 +480,7 @@ class Repository
     }
 
     /**
+<<<<<<< HEAD
      * Run the callback function with the given context values and restore the original context state when complete.
      *
      * @param  callable  $callback
@@ -506,6 +510,8 @@ class Repository
     }
 
     /**
+=======
+>>>>>>> upstream/main
      * Determine if the repository is empty.
      *
      * @return bool

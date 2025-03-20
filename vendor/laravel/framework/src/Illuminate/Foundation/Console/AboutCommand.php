@@ -165,7 +165,10 @@ class AboutCommand extends Command
 
         $formatEnabledStatus = fn ($value) => $value ? '<fg=yellow;options=bold>ENABLED</>' : 'OFF';
         $formatCachedStatus = fn ($value) => $value ? '<fg=green;options=bold>CACHED</>' : '<fg=yellow;options=bold>NOT CACHED</>';
+<<<<<<< HEAD
         $formatStorageLinkedStatus = fn ($value) => $value ? '<fg=green;options=bold>LINKED</>' : '<fg=yellow;options=bold>NOT LINKED</>';
+=======
+>>>>>>> upstream/main
 
         static::addToSection('Environment', fn () => [
             'Application Name' => config('app.name'),
@@ -215,14 +218,18 @@ class AboutCommand extends Command
             'Session' => config('session.driver'),
         ]));
 
+<<<<<<< HEAD
         static::addToSection('Storage', fn () => [
             ...$this->determineStoragePathLinkStatus($formatStorageLinkedStatus),
         ]);
 
+=======
+>>>>>>> upstream/main
         (new Collection(static::$customDataResolvers))->each->__invoke();
     }
 
     /**
+<<<<<<< HEAD
      * Determine storage symbolic links status.
      *
      * @param  callable  $formatStorageLinkedStatus
@@ -240,6 +247,8 @@ class AboutCommand extends Command
     }
 
     /**
+=======
+>>>>>>> upstream/main
      * Determine whether the given directory has PHP files.
      *
      * @param  string  $path

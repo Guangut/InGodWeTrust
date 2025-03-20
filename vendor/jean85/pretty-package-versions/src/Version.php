@@ -8,6 +8,7 @@ class Version
 {
     private const SHORT_COMMIT_LENGTH = 7;
 
+<<<<<<< HEAD
     private string $packageName;
 
     private string $prettyVersion;
@@ -15,6 +16,19 @@ class Version
     private string $reference;
 
     private bool $versionIsTagged;
+=======
+    /** @var string */
+    private $packageName;
+
+    /** @var string */
+    private $prettyVersion;
+
+    /** @var string */
+    private $reference;
+
+    /** @var bool */
+    private $versionIsTagged;
+>>>>>>> upstream/main
 
     public const NO_VERSION_TEXT = '{no version}';
     public const NO_REFERENCE_TEXT = '{no reference}';
@@ -24,7 +38,11 @@ class Version
         $this->packageName = $packageName;
         $this->prettyVersion = $prettyVersion ?? self::NO_VERSION_TEXT;
         $this->reference = $reference ?? self::NO_REFERENCE_TEXT;
+<<<<<<< HEAD
         $this->versionIsTagged = preg_match('/^v?(\d+\.)+\d+(-(beta|RC|alpha).?\d+)?/i', $this->getShortVersion()) === 1;
+=======
+        $this->versionIsTagged = preg_match('/[^v\d.]/', $this->getShortVersion()) === 0;
+>>>>>>> upstream/main
     }
 
     public function getPrettyVersion(): string
@@ -87,10 +105,13 @@ class Version
 
     public function getShortReference(): string
     {
+<<<<<<< HEAD
         if ($this->reference === self::NO_REFERENCE_TEXT) {
             return self::NO_REFERENCE_TEXT;
         }
 
+=======
+>>>>>>> upstream/main
         return substr($this->reference, 0, self::SHORT_COMMIT_LENGTH);
     }
 

@@ -38,8 +38,13 @@ class CastMakeCommand extends GeneratorCommand
     protected function getStub()
     {
         return $this->option('inbound')
+<<<<<<< HEAD
             ? $this->resolveStubPath('/stubs/cast.inbound.stub')
             : $this->resolveStubPath('/stubs/cast.stub');
+=======
+                    ? $this->resolveStubPath('/stubs/cast.inbound.stub')
+                    : $this->resolveStubPath('/stubs/cast.stub');
+>>>>>>> upstream/main
     }
 
     /**

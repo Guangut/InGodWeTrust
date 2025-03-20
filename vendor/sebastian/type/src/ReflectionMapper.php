@@ -9,7 +9,10 @@
  */
 namespace SebastianBergmann\Type;
 
+<<<<<<< HEAD
 use function array_filter;
+=======
+>>>>>>> upstream/main
 use function assert;
 use ReflectionFunction;
 use ReflectionIntersectionType;
@@ -34,6 +37,11 @@ final class ReflectionMapper
         foreach ($reflector->getParameters() as $parameter) {
             $name = $parameter->getName();
 
+<<<<<<< HEAD
+=======
+            assert($name !== '');
+
+>>>>>>> upstream/main
             if (!$parameter->hasType()) {
                 $parameters[] = new Parameter($name, new UnknownType);
 
@@ -89,7 +97,13 @@ final class ReflectionMapper
             return $this->mapUnionType($returnType, $reflector);
         }
 
+<<<<<<< HEAD
         return $this->mapIntersectionType($returnType, $reflector);
+=======
+        if ($returnType instanceof ReflectionIntersectionType) {
+            return $this->mapIntersectionType($returnType, $reflector);
+        }
+>>>>>>> upstream/main
     }
 
     public function fromPropertyType(ReflectionProperty $reflector): Type
@@ -110,30 +124,46 @@ final class ReflectionMapper
             return $this->mapUnionType($propertyType, $reflector);
         }
 
+<<<<<<< HEAD
         return $this->mapIntersectionType($propertyType, $reflector);
+=======
+        if ($propertyType instanceof ReflectionIntersectionType) {
+            return $this->mapIntersectionType($propertyType, $reflector);
+        }
+>>>>>>> upstream/main
     }
 
     private function mapNamedType(ReflectionNamedType $type, ReflectionFunction|ReflectionMethod|ReflectionProperty $reflector): Type
     {
         $classScope = !$reflector instanceof ReflectionFunction;
+<<<<<<< HEAD
         $typeName   = $type->getName();
 
         assert($typeName !== '');
 
         if ($classScope && $typeName === 'self') {
+=======
+
+        if ($classScope && $type->getName() === 'self') {
+>>>>>>> upstream/main
             return ObjectType::fromName(
                 $reflector->getDeclaringClass()->getName(),
                 $type->allowsNull(),
             );
         }
 
+<<<<<<< HEAD
         if ($classScope && $typeName === 'static') {
+=======
+        if ($classScope && $type->getName() === 'static') {
+>>>>>>> upstream/main
             return new StaticType(
                 TypeName::fromReflection($reflector->getDeclaringClass()),
                 $type->allowsNull(),
             );
         }
 
+<<<<<<< HEAD
         if ($typeName === 'mixed') {
             return new MixedType;
         }
@@ -145,18 +175,32 @@ final class ReflectionMapper
 
             return ObjectType::fromName(
                 $parentClass->getName(),
+=======
+        if ($type->getName() === 'mixed') {
+            return new MixedType;
+        }
+
+        if ($classScope && $type->getName() === 'parent') {
+            return ObjectType::fromName(
+                $reflector->getDeclaringClass()->getParentClass()->getName(),
+>>>>>>> upstream/main
                 $type->allowsNull(),
             );
         }
 
         return Type::fromName(
+<<<<<<< HEAD
             $typeName,
+=======
+            $type->getName(),
+>>>>>>> upstream/main
             $type->allowsNull(),
         );
     }
 
     private function mapUnionType(ReflectionUnionType $type, ReflectionFunction|ReflectionMethod|ReflectionProperty $reflector): Type
     {
+<<<<<<< HEAD
         $types             = [];
         $objectType        = false;
         $genericObjectType = false;
@@ -172,6 +216,13 @@ final class ReflectionMapper
                 }
 
                 $types[] = $namedType;
+=======
+        $types = [];
+
+        foreach ($type->getTypes() as $_type) {
+            if ($_type instanceof ReflectionNamedType) {
+                $types[] = $this->mapNamedType($_type, $reflector);
+>>>>>>> upstream/main
 
                 continue;
             }
@@ -179,6 +230,7 @@ final class ReflectionMapper
             $types[] = $this->mapIntersectionType($_type, $reflector);
         }
 
+<<<<<<< HEAD
         if ($objectType && $genericObjectType) {
             $types = array_filter(
                 $types,
@@ -193,6 +245,8 @@ final class ReflectionMapper
             );
         }
 
+=======
+>>>>>>> upstream/main
         return new UnionType(...$types);
     }
 

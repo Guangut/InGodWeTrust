@@ -9,6 +9,10 @@
  */
 namespace SebastianBergmann\Type;
 
+<<<<<<< HEAD
+=======
+use function array_is_list;
+>>>>>>> upstream/main
 use function assert;
 use function count;
 use function implode;
@@ -32,7 +36,11 @@ final class UnionType extends Type
         $this->ensureMinimumOfTwoTypes(...$types);
         $this->ensureOnlyValidTypes(...$types);
 
+<<<<<<< HEAD
         assert(!empty($types));
+=======
+        assert(array_is_list($types) && !empty($types));
+>>>>>>> upstream/main
 
         $this->types = $types;
     }
@@ -75,7 +83,16 @@ final class UnionType extends Type
 
         sort($types);
 
+<<<<<<< HEAD
         return implode('|', $types);
+=======
+        $name = implode('|', $types);
+
+        /** @phpstan-ignore empty.variable */
+        assert(!empty($name));
+
+        return $name;
+>>>>>>> upstream/main
     }
 
     public function allowsNull(): bool

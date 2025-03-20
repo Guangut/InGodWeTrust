@@ -2,12 +2,15 @@
 
 All notable changes are documented in this file using the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
+<<<<<<< HEAD
 ## [3.0.3] - 2025-03-19
 
 ### Fixed
 
 * [#9](https://github.com/sebastianbergmann/code-unit/issues/9): `Mapper::stringToCodeUnits('Foo::bar')` does not find method `Foo::bar` when a function named `\bar` is defined
 
+=======
+>>>>>>> upstream/main
 ## [3.0.2] - 2024-12-12
 
 ### Fixed
@@ -90,7 +93,10 @@ All notable changes are documented in this file using the [Keep a CHANGELOG](htt
 
 * Initial release
 
+<<<<<<< HEAD
 [3.0.3]: https://github.com/sebastianbergmann/code-unit/compare/3.0.2...3.0.3
+=======
+>>>>>>> upstream/main
 [3.0.2]: https://github.com/sebastianbergmann/code-unit/compare/3.0.1...3.0.2
 [3.0.1]: https://github.com/sebastianbergmann/code-unit/compare/3.0.0...3.0.1
 [3.0.0]: https://github.com/sebastianbergmann/code-unit/compare/2.0...3.0.0

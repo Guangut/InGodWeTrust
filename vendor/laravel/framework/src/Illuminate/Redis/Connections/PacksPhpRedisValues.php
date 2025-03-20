@@ -95,26 +95,44 @@ trait PacksPhpRedisValues
         $oldSerializer = null;
 
         if ($this->serialized()) {
+<<<<<<< HEAD
             $oldSerializer = $client->getOption(Redis::OPT_SERIALIZER);
             $client->setOption(Redis::OPT_SERIALIZER, Redis::SERIALIZER_NONE);
+=======
+            $oldSerializer = $client->getOption($client::OPT_SERIALIZER);
+            $client->setOption($client::OPT_SERIALIZER, $client::SERIALIZER_NONE);
+>>>>>>> upstream/main
         }
 
         $oldCompressor = null;
 
         if ($this->compressed()) {
+<<<<<<< HEAD
             $oldCompressor = $client->getOption(Redis::OPT_COMPRESSION);
             $client->setOption(Redis::OPT_COMPRESSION, Redis::COMPRESSION_NONE);
+=======
+            $oldCompressor = $client->getOption($client::OPT_COMPRESSION);
+            $client->setOption($client::OPT_COMPRESSION, $client::COMPRESSION_NONE);
+>>>>>>> upstream/main
         }
 
         try {
             return $callback();
         } finally {
             if ($oldSerializer !== null) {
+<<<<<<< HEAD
                 $client->setOption(Redis::OPT_SERIALIZER, $oldSerializer);
             }
 
             if ($oldCompressor !== null) {
                 $client->setOption(Redis::OPT_COMPRESSION, $oldCompressor);
+=======
+                $client->setOption($client::OPT_SERIALIZER, $oldSerializer);
+            }
+
+            if ($oldCompressor !== null) {
+                $client->setOption($client::OPT_COMPRESSION, $oldCompressor);
+>>>>>>> upstream/main
             }
         }
     }

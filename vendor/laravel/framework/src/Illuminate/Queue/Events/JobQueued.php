@@ -8,7 +8,11 @@ class JobQueued
      * Create a new event instance.
      *
      * @param  string  $connectionName  The connection name.
+<<<<<<< HEAD
      * @param  string|null  $queue  The queue name.
+=======
+     * @param  string  $queue  The queue name.
+>>>>>>> upstream/main
      * @param  string|int|null  $id  The job ID.
      * @param  \Closure|string|object  $job  The job instance.
      * @param  string  $payload  The job payload.

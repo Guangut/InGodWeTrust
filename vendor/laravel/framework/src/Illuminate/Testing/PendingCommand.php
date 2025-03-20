@@ -10,7 +10,10 @@ use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Traits\Conditionable;
 use Illuminate\Support\Traits\Macroable;
+<<<<<<< HEAD
 use Illuminate\Support\Traits\Tappable;
+=======
+>>>>>>> upstream/main
 use Mockery;
 use Mockery\Exception\NoMatchingExpectationException;
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
@@ -22,7 +25,12 @@ use Symfony\Component\Console\Question\ChoiceQuestion;
 
 class PendingCommand
 {
+<<<<<<< HEAD
     use Conditionable, Macroable, Tappable;
+=======
+    use Conditionable;
+    use Macroable;
+>>>>>>> upstream/main
 
     /**
      * The test being run.

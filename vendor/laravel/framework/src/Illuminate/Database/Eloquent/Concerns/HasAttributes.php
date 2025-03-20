@@ -117,7 +117,10 @@ trait HasAttributes
         'int',
         'integer',
         'json',
+<<<<<<< HEAD
         'json:unicode',
+=======
+>>>>>>> upstream/main
         'object',
         'real',
         'string',
@@ -483,8 +486,13 @@ trait HasAttributes
         }
 
         return $this->isRelation($key) || $this->relationLoaded($key)
+<<<<<<< HEAD
             ? $this->getRelationValue($key)
             : $this->throwMissingAttributeExceptionIfApplicable($key);
+=======
+                    ? $this->getRelationValue($key)
+                    : $this->throwMissingAttributeExceptionIfApplicable($key);
+>>>>>>> upstream/main
     }
 
     /**
@@ -745,8 +753,13 @@ trait HasAttributes
             $value = $this->mutateAttributeMarkedAttribute($key, $value);
 
             $value = $value instanceof DateTimeInterface
+<<<<<<< HEAD
                 ? $this->serializeDate($value)
                 : $value;
+=======
+                        ? $this->serializeDate($value)
+                        : $value;
+>>>>>>> upstream/main
         } else {
             $value = $this->mutateAttribute($key, $value);
         }
@@ -838,7 +851,10 @@ trait HasAttributes
                 return $this->fromJson($value, true);
             case 'array':
             case 'json':
+<<<<<<< HEAD
             case 'json:unicode':
+=======
+>>>>>>> upstream/main
                 return $this->fromJson($value);
             case 'collection':
                 return new BaseCollection($this->fromJson($value));
@@ -1180,7 +1196,11 @@ trait HasAttributes
 
         $value = $this->asJson($this->getArrayAttributeWithValue(
             $path, $key, $value
+<<<<<<< HEAD
         ), $this->getJsonCastFlags($key));
+=======
+        ));
+>>>>>>> upstream/main
 
         $this->attributes[$key] = $this->isEncryptedCastable($key)
             ? $this->castAttributeAsEncryptedString($key, $value)
@@ -1252,8 +1272,13 @@ trait HasAttributes
     protected function getEnumCaseFromValue($enumClass, $value)
     {
         return is_subclass_of($enumClass, BackedEnum::class)
+<<<<<<< HEAD
             ? $enumClass::from($value)
             : constant($enumClass.'::'.$value);
+=======
+                ? $enumClass::from($value)
+                : constant($enumClass.'::'.$value);
+>>>>>>> upstream/main
     }
 
     /**
@@ -1315,7 +1340,11 @@ trait HasAttributes
      */
     protected function castAttributeAsJson($key, $value)
     {
+<<<<<<< HEAD
         $value = $this->asJson($value, $this->getJsonCastFlags($key));
+=======
+        $value = $this->asJson($value);
+>>>>>>> upstream/main
 
         if ($value === false) {
             throw JsonEncodingException::forAttribute(
@@ -1327,6 +1356,7 @@ trait HasAttributes
     }
 
     /**
+<<<<<<< HEAD
      * Get the JSON casting flags for the given attribute.
      *
      * @param  string  $key
@@ -1353,6 +1383,16 @@ trait HasAttributes
     protected function asJson($value, $flags = 0)
     {
         return Json::encode($value, $flags);
+=======
+     * Encode the given value as JSON.
+     *
+     * @param  mixed  $value
+     * @return string
+     */
+    protected function asJson($value)
+    {
+        return Json::encode($value);
+>>>>>>> upstream/main
     }
 
     /**
@@ -1689,7 +1729,11 @@ trait HasAttributes
      */
     protected function isJsonCastable($key)
     {
+<<<<<<< HEAD
         return $this->hasCast($key, ['array', 'json', 'json:unicode', 'object', 'collection', 'encrypted:array', 'encrypted:collection', 'encrypted:json', 'encrypted:object']);
+=======
+        return $this->hasCast($key, ['array', 'json', 'object', 'collection', 'encrypted:array', 'encrypted:collection', 'encrypted:json', 'encrypted:object']);
+>>>>>>> upstream/main
     }
 
     /**

@@ -96,8 +96,13 @@ class InvokableValidationRule implements Rule, ValidatorAwareRule
         }
 
         $method = $this->invokable instanceof ValidationRule
+<<<<<<< HEAD
             ? 'validate'
             : '__invoke';
+=======
+                        ? 'validate'
+                        : '__invoke';
+>>>>>>> upstream/main
 
         $this->invokable->{$method}($attribute, $value, function ($attribute, $message = null) {
             $this->failed = true;

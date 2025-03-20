@@ -713,8 +713,13 @@ class BladeCompiler extends Compiler implements CompilerInterface
 
         $this->directive($name, function ($expression) use ($name) {
             return $expression !== ''
+<<<<<<< HEAD
                 ? "<?php if (\Illuminate\Support\Facades\Blade::check('{$name}', {$expression})): ?>"
                 : "<?php if (\Illuminate\Support\Facades\Blade::check('{$name}')): ?>";
+=======
+                    ? "<?php if (\Illuminate\Support\Facades\Blade::check('{$name}', {$expression})): ?>"
+                    : "<?php if (\Illuminate\Support\Facades\Blade::check('{$name}')): ?>";
+>>>>>>> upstream/main
         });
 
         $this->directive('unless'.$name, function ($expression) use ($name) {
@@ -762,10 +767,17 @@ class BladeCompiler extends Compiler implements CompilerInterface
 
         if (is_null($alias)) {
             $alias = str_contains($class, '\\View\\Components\\')
+<<<<<<< HEAD
                 ? (new Collection(explode('\\', Str::after($class, '\\View\\Components\\'))))->map(function ($segment) {
                     return Str::kebab($segment);
                 })->implode(':')
                 : Str::kebab(class_basename($class));
+=======
+                            ? (new Collection(explode('\\', Str::after($class, '\\View\\Components\\'))))->map(function ($segment) {
+                                return Str::kebab($segment);
+                            })->implode(':')
+                            : Str::kebab(class_basename($class));
+>>>>>>> upstream/main
         }
 
         if (! empty($prefix)) {
@@ -897,8 +909,13 @@ class BladeCompiler extends Compiler implements CompilerInterface
 
         $this->directive($alias, function ($expression) use ($path) {
             return $expression
+<<<<<<< HEAD
                 ? "<?php \$__env->startComponent('{$path}', {$expression}); ?>"
                 : "<?php \$__env->startComponent('{$path}'); ?>";
+=======
+                        ? "<?php \$__env->startComponent('{$path}', {$expression}); ?>"
+                        : "<?php \$__env->startComponent('{$path}'); ?>";
+>>>>>>> upstream/main
         });
 
         $this->directive('end'.$alias, function ($expression) {

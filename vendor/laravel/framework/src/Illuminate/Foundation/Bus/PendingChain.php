@@ -117,8 +117,13 @@ class PendingChain
     public function catch($callback)
     {
         $this->catchCallbacks[] = $callback instanceof Closure
+<<<<<<< HEAD
             ? new SerializableClosure($callback)
             : $callback;
+=======
+                        ? new SerializableClosure($callback)
+                        : $callback;
+>>>>>>> upstream/main
 
         return $this;
     }

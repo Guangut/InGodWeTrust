@@ -75,8 +75,13 @@ class FakeProcessSequence
     protected function toProcessResult(ProcessResultContract|FakeProcessDescription|array|string $process)
     {
         return is_array($process) || is_string($process)
+<<<<<<< HEAD
             ? new FakeProcessResult(output: $process)
             : $process;
+=======
+                ? new FakeProcessResult(output: $process)
+                : $process;
+>>>>>>> upstream/main
     }
 
     /**

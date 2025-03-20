@@ -247,8 +247,12 @@ class NotificationSender
     {
         if (! $notifiables instanceof Collection && ! is_array($notifiables)) {
             return $notifiables instanceof Model
+<<<<<<< HEAD
                 ? new EloquentCollection([$notifiables])
                 : [$notifiables];
+=======
+                            ? new EloquentCollection([$notifiables]) : [$notifiables];
+>>>>>>> upstream/main
         }
 
         return $notifiables;

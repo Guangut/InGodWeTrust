@@ -2,7 +2,10 @@
 
 namespace Illuminate\Database;
 
+<<<<<<< HEAD
 use Illuminate\Support\Facades\DB;
+=======
+>>>>>>> upstream/main
 use Illuminate\Support\Str;
 use PDOException;
 use Throwable;
@@ -89,6 +92,7 @@ class QueryException extends PDOException
     }
 
     /**
+<<<<<<< HEAD
      * Get the raw SQL representation of the query with embedded bindings.
      */
     public function getRawSql(): string
@@ -99,6 +103,8 @@ class QueryException extends PDOException
     }
 
     /**
+=======
+>>>>>>> upstream/main
      * Get the bindings for the query.
      *
      * @return array

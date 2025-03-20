@@ -731,8 +731,13 @@ trait ValidatesAttributes
         }
 
         $dimensions = method_exists($value, 'dimensions')
+<<<<<<< HEAD
             ? $value->dimensions()
             : @getimagesize($value->getRealPath());
+=======
+                ? $value->dimensions()
+                : @getimagesize($value->getRealPath());
+>>>>>>> upstream/main
 
         if (! $dimensions) {
             return false;
@@ -980,8 +985,13 @@ trait ValidatesAttributes
         }
 
         return is_array($value)
+<<<<<<< HEAD
             ? $verifier->getMultiCount($table, $column, $value, $extra)
             : $verifier->getCount($table, $column, $value, null, null, $extra);
+=======
+                ? $verifier->getMultiCount($table, $column, $value, $extra)
+                : $verifier->getCount($table, $column, $value, null, null, $extra);
+>>>>>>> upstream/main
     }
 
     /**
@@ -1119,8 +1129,12 @@ trait ValidatesAttributes
     public function getQueryColumn($parameters, $attribute)
     {
         return isset($parameters[1]) && $parameters[1] !== 'NULL'
+<<<<<<< HEAD
             ? $parameters[1]
             : $this->guessColumnForQuery($attribute);
+=======
+                    ? $parameters[1] : $this->guessColumnForQuery($attribute);
+>>>>>>> upstream/main
     }
 
     /**
@@ -1638,8 +1652,13 @@ trait ValidatesAttributes
         ];
 
         return ($value instanceof UploadedFile)
+<<<<<<< HEAD
             ? in_array(trim(strtolower($value->getClientOriginalExtension())), $phpExtensions)
             : in_array(trim(strtolower($value->getExtension())), $phpExtensions);
+=======
+           ? in_array(trim(strtolower($value->getClientOriginalExtension())), $phpExtensions)
+           : in_array(trim(strtolower($value->getExtension())), $phpExtensions);
+>>>>>>> upstream/main
     }
 
     /**

@@ -333,6 +333,7 @@ class PostgresGrammar extends Grammar
      */
     public function compileUnique(Blueprint $blueprint, Fluent $command)
     {
+<<<<<<< HEAD
         $uniqueStatement = 'unique';
 
         if (! is_null($command->nullsNotDistinct)) {
@@ -343,6 +344,11 @@ class PostgresGrammar extends Grammar
             $this->wrapTable($blueprint),
             $this->wrap($command->index),
             $uniqueStatement,
+=======
+        $sql = sprintf('alter table %s add constraint %s unique (%s)',
+            $this->wrapTable($blueprint),
+            $this->wrap($command->index),
+>>>>>>> upstream/main
             $this->columnize($command->columns)
         );
 
@@ -470,7 +476,11 @@ class PostgresGrammar extends Grammar
      */
     public function compileDropAllTables($tables)
     {
+<<<<<<< HEAD
         return 'drop table '.implode(', ', $this->escapeNames($tables)).' cascade';
+=======
+        return 'drop table '.implode(',', $this->escapeNames($tables)).' cascade';
+>>>>>>> upstream/main
     }
 
     /**
@@ -481,7 +491,11 @@ class PostgresGrammar extends Grammar
      */
     public function compileDropAllViews($views)
     {
+<<<<<<< HEAD
         return 'drop view '.implode(', ', $this->escapeNames($views)).' cascade';
+=======
+        return 'drop view '.implode(',', $this->escapeNames($views)).' cascade';
+>>>>>>> upstream/main
     }
 
     /**
@@ -492,7 +506,11 @@ class PostgresGrammar extends Grammar
      */
     public function compileDropAllTypes($types)
     {
+<<<<<<< HEAD
         return 'drop type '.implode(', ', $this->escapeNames($types)).' cascade';
+=======
+        return 'drop type '.implode(',', $this->escapeNames($types)).' cascade';
+>>>>>>> upstream/main
     }
 
     /**
@@ -503,7 +521,11 @@ class PostgresGrammar extends Grammar
      */
     public function compileDropAllDomains($domains)
     {
+<<<<<<< HEAD
         return 'drop domain '.implode(', ', $this->escapeNames($domains)).' cascade';
+=======
+        return 'drop domain '.implode(',', $this->escapeNames($domains)).' cascade';
+>>>>>>> upstream/main
     }
 
     /**
@@ -689,10 +711,18 @@ class PostgresGrammar extends Grammar
      */
     public function escapeNames($names)
     {
+<<<<<<< HEAD
         return array_map(
             fn ($name) => (new Collection(explode('.', $name)))->map($this->wrapValue(...))->implode('.'),
             $names
         );
+=======
+        return array_map(static function ($name) {
+            return '"'.(new Collection(explode('.', $name)))
+                ->map(fn ($segment) => trim($segment, '\'"'))
+                ->implode('"."').'"';
+        }, $names);
+>>>>>>> upstream/main
     }
 
     /**

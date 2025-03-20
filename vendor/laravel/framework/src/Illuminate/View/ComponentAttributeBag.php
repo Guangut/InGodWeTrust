@@ -269,8 +269,13 @@ class ComponentAttributeBag implements ArrayAccess, IteratorAggregate, JsonSeria
     {
         $attributeDefaults = array_map(function ($value) use ($escape) {
             return $this->shouldEscapeAttributeValue($escape, $value)
+<<<<<<< HEAD
                 ? e($value)
                 : $value;
+=======
+                        ? e($value)
+                        : $value;
+>>>>>>> upstream/main
         }, $attributeDefaults);
 
         [$appendableAttributes, $nonAppendableAttributes] = (new Collection($this->attributes))
@@ -283,8 +288,13 @@ class ComponentAttributeBag implements ArrayAccess, IteratorAggregate, JsonSeria
 
         $attributes = $appendableAttributes->mapWithKeys(function ($value, $key) use ($attributeDefaults, $escape) {
             $defaultsValue = isset($attributeDefaults[$key]) && $attributeDefaults[$key] instanceof AppendableAttributeValue
+<<<<<<< HEAD
                 ? $this->resolveAppendableAttributeDefault($attributeDefaults, $key, $escape)
                 : ($attributeDefaults[$key] ?? '');
+=======
+                        ? $this->resolveAppendableAttributeDefault($attributeDefaults, $key, $escape)
+                        : ($attributeDefaults[$key] ?? '');
+>>>>>>> upstream/main
 
             if ($key === 'style') {
                 $value = Str::finish($value, ';');

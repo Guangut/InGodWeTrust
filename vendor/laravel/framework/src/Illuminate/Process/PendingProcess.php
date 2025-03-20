@@ -299,8 +299,13 @@ class PendingProcess
         $command = $command ?? $this->command;
 
         $process = is_iterable($command)
+<<<<<<< HEAD
             ? new Process($command, null, $this->environment)
             : Process::fromShellCommandline((string) $command, null, $this->environment);
+=======
+                ? new Process($command, null, $this->environment)
+                : Process::fromShellCommandline((string) $command, null, $this->environment);
+>>>>>>> upstream/main
 
         $process->setWorkingDirectory((string) ($this->path ?? getcwd()));
         $process->setTimeout($this->timeout);

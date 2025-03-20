@@ -78,8 +78,13 @@ class AblyBroadcaster extends Broadcaster
         $user = $this->retrieveUser($request, $channelName);
 
         $broadcastIdentifier = method_exists($user, 'getAuthIdentifierForBroadcasting')
+<<<<<<< HEAD
             ? $user->getAuthIdentifierForBroadcasting()
             : $user->getAuthIdentifier();
+=======
+                    ? $user->getAuthIdentifierForBroadcasting()
+                    : $user->getAuthIdentifier();
+>>>>>>> upstream/main
 
         $signature = $this->generateAblySignature(
             $request->channel_name,
@@ -175,8 +180,13 @@ class AblyBroadcaster extends Broadcaster
     {
         if ($this->isGuardedChannel($channel)) {
             return str_starts_with($channel, 'private-')
+<<<<<<< HEAD
                 ? Str::replaceFirst('private-', '', $channel)
                 : Str::replaceFirst('presence-', '', $channel);
+=======
+                        ? Str::replaceFirst('private-', '', $channel)
+                        : Str::replaceFirst('presence-', '', $channel);
+>>>>>>> upstream/main
         }
 
         return $channel;

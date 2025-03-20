@@ -83,8 +83,13 @@ class PreventRequestsDuringMaintenance
 
             if (isset($data['redirect'])) {
                 $path = $data['redirect'] === '/'
+<<<<<<< HEAD
                     ? $data['redirect']
                     : trim($data['redirect'], '/');
+=======
+                            ? $data['redirect']
+                            : trim($data['redirect'], '/');
+>>>>>>> upstream/main
 
                 if ($request->path() !== $path) {
                     return redirect($path);

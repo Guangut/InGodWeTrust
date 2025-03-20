@@ -203,8 +203,13 @@ class Command extends SymfonyCommand
             ));
 
             return (int) (is_numeric($this->option('isolated'))
+<<<<<<< HEAD
                 ? $this->option('isolated')
                 : $this->isolatedExitCode);
+=======
+                        ? $this->option('isolated')
+                        : $this->isolatedExitCode);
+>>>>>>> upstream/main
         }
 
         $method = method_exists($this, 'handle') ? 'handle' : '__invoke';

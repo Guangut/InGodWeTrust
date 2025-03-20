@@ -94,10 +94,16 @@ class FakeProcessDescription
      */
     public function replaceOutput(string $output)
     {
+<<<<<<< HEAD
         $this->output = (new Collection($this->output))
             ->reject(fn ($output) => $output['type'] === 'out')
             ->values()
             ->all();
+=======
+        $this->output = (new Collection($this->output))->reject(function ($output) {
+            return $output['type'] === 'out';
+        })->values()->all();
+>>>>>>> upstream/main
 
         if (strlen($output) > 0) {
             $this->output[] = [
@@ -117,10 +123,16 @@ class FakeProcessDescription
      */
     public function replaceErrorOutput(string $output)
     {
+<<<<<<< HEAD
         $this->output = (new Collection($this->output))
             ->reject(fn ($output) => $output['type'] === 'err')
             ->values()
             ->all();
+=======
+        $this->output = (new Collection($this->output))->reject(function ($output) {
+            return $output['type'] === 'err';
+        })->values()->all();
+>>>>>>> upstream/main
 
         if (strlen($output) > 0) {
             $this->output[] = [
@@ -207,8 +219,13 @@ class FakeProcessDescription
             ->filter(fn ($output) => $output['type'] === 'out');
 
         return $output->isNotEmpty()
+<<<<<<< HEAD
             ? rtrim($output->map->buffer->implode(''), "\n")."\n"
             : '';
+=======
+                    ? rtrim($output->map->buffer->implode(''), "\n")."\n"
+                    : '';
+>>>>>>> upstream/main
     }
 
     /**
@@ -222,7 +239,12 @@ class FakeProcessDescription
             ->filter(fn ($output) => $output['type'] === 'err');
 
         return $output->isNotEmpty()
+<<<<<<< HEAD
             ? rtrim($output->map->buffer->implode(''), "\n")."\n"
             : '';
+=======
+                    ? rtrim($output->map->buffer->implode(''), "\n")."\n"
+                    : '';
+>>>>>>> upstream/main
     }
 }

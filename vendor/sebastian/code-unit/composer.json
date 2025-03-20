@@ -40,8 +40,12 @@
         ],
         "files": [
             "tests/_fixture/file_with_multiple_code_units.php",
+<<<<<<< HEAD
             "tests/_fixture/function.php",
             "tests/_fixture/issue_9.php"
+=======
+            "tests/_fixture/function.php"
+>>>>>>> upstream/main
         ]
     },
     "extra": {

@@ -9,6 +9,7 @@ use InvalidArgumentException;
  * @see https://carbon.nesbot.com/docs/
  * @see https://github.com/briannesbitt/Carbon/blob/master/src/Carbon/Factory.php
  *
+<<<<<<< HEAD
  * @method \Illuminate\Support\Carbon create($year = 0, $month = 1, $day = 1, $hour = 0, $minute = 0, $second = 0, $timezone = null)
  * @method \Illuminate\Support\Carbon createFromDate($year = null, $month = null, $day = null, $timezone = null)
  * @method \Illuminate\Support\Carbon|false createFromFormat($format, $time, $timezone = null)
@@ -19,6 +20,18 @@ use InvalidArgumentException;
  * @method \Illuminate\Support\Carbon createFromTimestampUTC($timestamp)
  * @method \Illuminate\Support\Carbon createMidnightDate($year = null, $month = null, $day = null, $timezone = null)
  * @method \Illuminate\Support\Carbon|false createSafe($year = null, $month = null, $day = null, $hour = null, $minute = null, $second = null, $timezone = null)
+=======
+ * @method \Illuminate\Support\Carbon create($year = 0, $month = 1, $day = 1, $hour = 0, $minute = 0, $second = 0, $tz = null)
+ * @method \Illuminate\Support\Carbon createFromDate($year = null, $month = null, $day = null, $tz = null)
+ * @method \Illuminate\Support\Carbon|false createFromFormat($format, $time, $tz = null)
+ * @method \Illuminate\Support\Carbon createFromTime($hour = 0, $minute = 0, $second = 0, $tz = null)
+ * @method \Illuminate\Support\Carbon createFromTimeString($time, $tz = null)
+ * @method \Illuminate\Support\Carbon createFromTimestamp($timestamp, $tz = null)
+ * @method \Illuminate\Support\Carbon createFromTimestampMs($timestamp, $tz = null)
+ * @method \Illuminate\Support\Carbon createFromTimestampUTC($timestamp)
+ * @method \Illuminate\Support\Carbon createMidnightDate($year = null, $month = null, $day = null, $tz = null)
+ * @method \Illuminate\Support\Carbon|false createSafe($year = null, $month = null, $day = null, $hour = null, $minute = null, $second = null, $tz = null)
+>>>>>>> upstream/main
  * @method void disableHumanDiffOption($humanDiffOption)
  * @method void enableHumanDiffOption($humanDiffOption)
  * @method mixed executeWithLocale($locale, $func)
@@ -31,7 +44,11 @@ use InvalidArgumentException;
  * @method string getLocale()
  * @method int getMidDayAt()
  * @method \Illuminate\Support\Carbon|null getTestNow()
+<<<<<<< HEAD
  * @method \Symfony\Contracts\Translation\TranslatorInterface getTranslator()
+=======
+ * @method \Symfony\Component\Translation\TranslatorInterface getTranslator()
+>>>>>>> upstream/main
  * @method int getWeekEndsAt()
  * @method int getWeekStartsAt()
  * @method array getWeekendDays()
@@ -54,8 +71,13 @@ use InvalidArgumentException;
  * @method \Illuminate\Support\Carbon maxValue()
  * @method \Illuminate\Support\Carbon minValue()
  * @method void mixin($mixin)
+<<<<<<< HEAD
  * @method \Illuminate\Support\Carbon now($timezone = null)
  * @method \Illuminate\Support\Carbon parse($time = null, $timezone = null)
+=======
+ * @method \Illuminate\Support\Carbon now($tz = null)
+ * @method \Illuminate\Support\Carbon parse($time = null, $tz = null)
+>>>>>>> upstream/main
  * @method string pluralUnit(string $unit)
  * @method void resetMonthsOverflow()
  * @method void resetToStringFormat()
@@ -66,7 +88,11 @@ use InvalidArgumentException;
  * @method void setMidDayAt($hour)
  * @method void setTestNow($testNow = null)
  * @method void setToStringFormat($format)
+<<<<<<< HEAD
  * @method void setTranslator(\Symfony\Contracts\Translation\TranslatorInterface $translator)
+=======
+ * @method void setTranslator(\Symfony\Component\Translation\TranslatorInterface $translator)
+>>>>>>> upstream/main
  * @method void setUtf8($utf8)
  * @method void setWeekEndsAt($day)
  * @method void setWeekStartsAt($day)
@@ -74,12 +100,21 @@ use InvalidArgumentException;
  * @method bool shouldOverflowMonths()
  * @method bool shouldOverflowYears()
  * @method string singularUnit(string $unit)
+<<<<<<< HEAD
  * @method \Illuminate\Support\Carbon today($timezone = null)
  * @method \Illuminate\Support\Carbon tomorrow($timezone = null)
  * @method void useMonthsOverflow($monthsOverflow = true)
  * @method void useStrictMode($strictModeEnabled = true)
  * @method void useYearsOverflow($yearsOverflow = true)
  * @method \Illuminate\Support\Carbon yesterday($timezone = null)
+=======
+ * @method \Illuminate\Support\Carbon today($tz = null)
+ * @method \Illuminate\Support\Carbon tomorrow($tz = null)
+ * @method void useMonthsOverflow($monthsOverflow = true)
+ * @method void useStrictMode($strictModeEnabled = true)
+ * @method void useYearsOverflow($yearsOverflow = true)
+ * @method \Illuminate\Support\Carbon yesterday($tz = null)
+>>>>>>> upstream/main
  */
 class DateFactory
 {

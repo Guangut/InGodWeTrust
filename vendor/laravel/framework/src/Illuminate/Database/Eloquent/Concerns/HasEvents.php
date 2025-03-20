@@ -134,7 +134,11 @@ trait HasEvents
             [
                 'retrieved', 'creating', 'created', 'updating', 'updated',
                 'saving', 'saved', 'restoring', 'restored', 'replicating',
+<<<<<<< HEAD
                 'trashed', 'deleting', 'deleted', 'forceDeleting', 'forceDeleted',
+=======
+                'deleting', 'deleted', 'forceDeleting', 'forceDeleted',
+>>>>>>> upstream/main
             ],
             $this->observables
         );

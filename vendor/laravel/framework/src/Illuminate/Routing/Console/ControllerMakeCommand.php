@@ -53,8 +53,13 @@ class ControllerMakeCommand extends GeneratorCommand
             $stub = "/stubs/controller.{$type}.stub";
         } elseif ($this->option('parent')) {
             $stub = $this->option('singleton')
+<<<<<<< HEAD
                 ? '/stubs/controller.nested.singleton.stub'
                 : '/stubs/controller.nested.stub';
+=======
+                        ? '/stubs/controller.nested.singleton.stub'
+                        : '/stubs/controller.nested.stub';
+>>>>>>> upstream/main
         } elseif ($this->option('model')) {
             $stub = '/stubs/controller.model.stub';
         } elseif ($this->option('invokable')) {
@@ -85,8 +90,13 @@ class ControllerMakeCommand extends GeneratorCommand
     protected function resolveStubPath($stub)
     {
         return file_exists($customPath = $this->laravel->basePath(trim($stub, '/')))
+<<<<<<< HEAD
             ? $customPath
             : __DIR__.$stub;
+=======
+                        ? $customPath
+                        : __DIR__.$stub;
+>>>>>>> upstream/main
     }
 
     /**

@@ -365,8 +365,13 @@ class MailManager implements FactoryContract
         $factory = new PostmarkTransportFactory(null, $this->getHttpClient($config));
 
         $options = isset($config['message_stream_id'])
+<<<<<<< HEAD
             ? ['message_stream' => $config['message_stream_id']]
             : [];
+=======
+                    ? ['message_stream' => $config['message_stream_id']]
+                    : [];
+>>>>>>> upstream/main
 
         return $factory->create(new Dsn(
             'postmark+api',

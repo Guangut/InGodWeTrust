@@ -754,8 +754,13 @@ class Collection extends BaseCollection implements QueueableCollection
     protected function getQueueableModelClass($model)
     {
         return method_exists($model, 'getQueueableClassName')
+<<<<<<< HEAD
             ? $model->getQueueableClassName()
             : get_class($model);
+=======
+                ? $model->getQueueableClassName()
+                : get_class($model);
+>>>>>>> upstream/main
     }
 
     /**
@@ -770,8 +775,13 @@ class Collection extends BaseCollection implements QueueableCollection
         }
 
         return $this->first() instanceof QueueableEntity
+<<<<<<< HEAD
             ? $this->map->getQueueableId()->all()
             : $this->modelKeys();
+=======
+                    ? $this->map->getQueueableId()->all()
+                    : $this->modelKeys();
+>>>>>>> upstream/main
     }
 
     /**

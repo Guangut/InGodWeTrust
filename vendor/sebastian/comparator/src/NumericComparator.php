@@ -36,6 +36,7 @@ final class NumericComparator extends ScalarComparator
         assert(is_numeric($expected));
         assert(is_numeric($actual));
 
+<<<<<<< HEAD
         if ($this->isInfinite($expected) && $this->isInfinite($actual)) {
             if ($expected < 0 && $actual < 0) {
                 return;
@@ -44,6 +45,10 @@ final class NumericComparator extends ScalarComparator
             if ($expected > 0 && $actual > 0) {
                 return;
             }
+=======
+        if ($this->isInfinite($actual) && $this->isInfinite($expected)) {
+            return;
+>>>>>>> upstream/main
         }
 
         if (($this->isInfinite($actual) xor $this->isInfinite($expected)) ||

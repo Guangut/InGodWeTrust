@@ -45,7 +45,11 @@ class Application extends Container implements ApplicationContract, CachesConfig
      *
      * @var string
      */
+<<<<<<< HEAD
     const VERSION = '12.3.0';
+=======
+    const VERSION = '12.0.1';
+>>>>>>> upstream/main
 
     /**
      * The base path for the Laravel installation.
@@ -257,7 +261,11 @@ class Application extends Container implements ApplicationContract, CachesConfig
             isset($_ENV['APP_BASE_PATH']) => $_ENV['APP_BASE_PATH'],
             default => dirname(array_values(array_filter(
                 array_keys(ClassLoader::getRegisteredLoaders()),
+<<<<<<< HEAD
                 fn ($path) => ! str_starts_with($path, 'phar://'),
+=======
+                fn ($path) => ! str_contains($path, '/vendor/'),
+>>>>>>> upstream/main
             ))[0]),
         };
     }
@@ -424,14 +432,24 @@ class Application extends Container implements ApplicationContract, CachesConfig
 
         $this->useBootstrapPath(value(function () {
             return is_dir($directory = $this->basePath('.laravel'))
+<<<<<<< HEAD
                 ? $directory
                 : $this->basePath('bootstrap');
+=======
+                        ? $directory
+                        : $this->basePath('bootstrap');
+>>>>>>> upstream/main
         }));
 
         $this->useLangPath(value(function () {
             return is_dir($directory = $this->resourcePath('lang'))
+<<<<<<< HEAD
                 ? $directory
                 : $this->basePath('lang');
+=======
+                        ? $directory
+                        : $this->basePath('lang');
+>>>>>>> upstream/main
         }));
     }
 
@@ -1369,8 +1387,13 @@ class Application extends Container implements ApplicationContract, CachesConfig
         }
 
         return Str::startsWith($env, $this->absoluteCachePathPrefixes)
+<<<<<<< HEAD
             ? $env
             : $this->basePath($env);
+=======
+                ? $env
+                : $this->basePath($env);
+>>>>>>> upstream/main
     }
 
     /**

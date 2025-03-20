@@ -307,11 +307,19 @@ class Validator implements ValidatorContract
     protected $defaultNumericRules = ['Numeric', 'Integer', 'Decimal'];
 
     /**
+<<<<<<< HEAD
      * The current random hash for the validator.
      *
      * @var string
      */
     protected static $placeholderHash;
+=======
+     * The current placeholder for dots in rule keys.
+     *
+     * @var string
+     */
+    protected $dotPlaceholder;
+>>>>>>> upstream/main
 
     /**
      * The exception to throw upon failure.
@@ -344,9 +352,13 @@ class Validator implements ValidatorContract
         array $messages = [],
         array $attributes = [],
     ) {
+<<<<<<< HEAD
         if (! isset(static::$placeholderHash)) {
             static::$placeholderHash = Str::random();
         }
+=======
+        $this->dotPlaceholder = Str::random();
+>>>>>>> upstream/main
 
         $this->initialRules = $rules;
         $this->translator = $translator;
@@ -374,7 +386,11 @@ class Validator implements ValidatorContract
 
             $key = str_replace(
                 ['.', '*'],
+<<<<<<< HEAD
                 ['__dot__'.static::$placeholderHash, '__asterisk__'.static::$placeholderHash],
+=======
+                [$this->dotPlaceholder, '__asterisk__'],
+>>>>>>> upstream/main
                 $key
             );
 
@@ -396,8 +412,13 @@ class Validator implements ValidatorContract
 
         foreach ($data as $key => $value) {
             $originalData[$this->replacePlaceholderInString($key)] = is_array($value)
+<<<<<<< HEAD
                 ? $this->replacePlaceholders($value)
                 : $value;
+=======
+                        ? $this->replacePlaceholders($value)
+                        : $value;
+>>>>>>> upstream/main
         }
 
         return $originalData;
@@ -412,7 +433,11 @@ class Validator implements ValidatorContract
     protected function replacePlaceholderInString(string $value)
     {
         return str_replace(
+<<<<<<< HEAD
             ['__dot__'.static::$placeholderHash, '__asterisk__'.static::$placeholderHash],
+=======
+            [$this->dotPlaceholder, '__asterisk__'],
+>>>>>>> upstream/main
             ['.', '*'],
             $value
         );
@@ -421,13 +446,22 @@ class Validator implements ValidatorContract
     /**
      * Replace each field parameter dot placeholder with dot.
      *
+<<<<<<< HEAD
      * @param  array  $parameters
      * @return array
+=======
+     * @param  string  $value
+     * @return string
+>>>>>>> upstream/main
      */
     protected function replaceDotPlaceholderInParameters(array $parameters)
     {
         return array_map(function ($field) {
+<<<<<<< HEAD
             return str_replace('__dot__'.static::$placeholderHash, '.', $field);
+=======
+            return str_replace($this->dotPlaceholder, '.', $field);
+>>>>>>> upstream/main
         }, $parameters);
     }
 
@@ -588,8 +622,13 @@ class Validator implements ValidatorContract
     public function safe(?array $keys = null)
     {
         return is_array($keys)
+<<<<<<< HEAD
             ? (new ValidatedInput($this->validated()))->only($keys)
             : new ValidatedInput($this->validated());
+=======
+                ? (new ValidatedInput($this->validated()))->only($keys)
+                : new ValidatedInput($this->validated());
+>>>>>>> upstream/main
     }
 
     /**
@@ -675,8 +714,13 @@ class Validator implements ValidatorContract
 
         if ($rule instanceof RuleContract) {
             return $validatable
+<<<<<<< HEAD
                 ? $this->validateUsingCustomRule($attribute, $value, $rule)
                 : null;
+=======
+                    ? $this->validateUsingCustomRule($attribute, $value, $rule)
+                    : null;
+>>>>>>> upstream/main
         }
 
         $method = "validate{$rule}";
@@ -748,7 +792,11 @@ class Validator implements ValidatorContract
     protected function replaceDotInParameters(array $parameters)
     {
         return array_map(function ($field) {
+<<<<<<< HEAD
             return str_replace('\.', '__dot__'.static::$placeholderHash, $field);
+=======
+            return str_replace('\.', $this->dotPlaceholder, $field);
+>>>>>>> upstream/main
         }, $parameters);
     }
 
@@ -874,6 +922,7 @@ class Validator implements ValidatorContract
      */
     protected function validateUsingCustomRule($attribute, $value, $rule)
     {
+<<<<<<< HEAD
         $originalAttribute = $this->replacePlaceholderInString($attribute);
 
         $attribute = match (true) {
@@ -882,16 +931,22 @@ class Validator implements ValidatorContract
             $rule instanceof Rules\Password => $attribute,
             default => $originalAttribute,
         };
+=======
+        $attribute = $this->replacePlaceholderInString($attribute);
+>>>>>>> upstream/main
 
         $value = is_array($value) ? $this->replacePlaceholders($value) : $value;
 
         if ($rule instanceof ValidatorAwareRule) {
+<<<<<<< HEAD
             if ($attribute !== $originalAttribute) {
                 $this->addCustomAttributes([
                     $attribute => $this->customAttributes[$originalAttribute] ?? $originalAttribute,
                 ]);
             }
 
+=======
+>>>>>>> upstream/main
             $rule->setValidator($this);
         }
 
@@ -904,14 +959,24 @@ class Validator implements ValidatorContract
                 get_class($rule->invokable()) :
                 get_class($rule);
 
+<<<<<<< HEAD
             $this->failedRules[$originalAttribute][$ruleClass] = [];
 
             $messages = $this->getFromLocalArray($originalAttribute, $ruleClass) ?? $rule->message();
+=======
+            $this->failedRules[$attribute][$ruleClass] = [];
+
+            $messages = $this->getFromLocalArray($attribute, $ruleClass) ?? $rule->message();
+>>>>>>> upstream/main
 
             $messages = $messages ? (array) $messages : [$ruleClass];
 
             foreach ($messages as $key => $message) {
+<<<<<<< HEAD
                 $key = is_string($key) ? $key : $originalAttribute;
+=======
+                $key = is_string($key) ? $key : $attribute;
+>>>>>>> upstream/main
 
                 $this->messages->add($key, $this->makeReplacements(
                     $message, $key, $ruleClass, []
@@ -1042,11 +1107,17 @@ class Validator implements ValidatorContract
      */
     protected function attributesThatHaveMessages()
     {
+<<<<<<< HEAD
         return (new Collection($this->messages()->toArray()))
             ->map(fn ($message, $key) => explode('.', $key)[0])
             ->unique()
             ->flip()
             ->all();
+=======
+        return (new Collection($this->messages()->toArray()))->map(function ($message, $key) {
+            return explode('.', $key)[0];
+        })->unique()->flip()->all();
+>>>>>>> upstream/main
     }
 
     /**
@@ -1206,7 +1277,11 @@ class Validator implements ValidatorContract
     {
         return (new Collection($this->rules))
             ->mapWithKeys(fn ($value, $key) => [
+<<<<<<< HEAD
                 str_replace('__dot__'.static::$placeholderHash, '\\.', $key) => $value,
+=======
+                str_replace($this->dotPlaceholder, '\\.', $key) => $value,
+>>>>>>> upstream/main
             ])
             ->all();
     }
@@ -1219,11 +1294,17 @@ class Validator implements ValidatorContract
      */
     public function setRules(array $rules)
     {
+<<<<<<< HEAD
         $rules = (new Collection($rules))
             ->mapWithKeys(function ($value, $key) {
                 return [str_replace('\.', '__dot__'.static::$placeholderHash, $key) => $value];
             })
             ->toArray();
+=======
+        $rules = (new Collection($rules))->mapWithKeys(function ($value, $key) {
+            return [str_replace('\.', $this->dotPlaceholder, $key) => $value];
+        })->toArray();
+>>>>>>> upstream/main
 
         $this->initialRules = $rules;
 
@@ -1295,8 +1376,13 @@ class Validator implements ValidatorContract
         $lastSegmentOfAttribute = strrchr($attribute, '.');
 
         $attribute = $lastSegmentOfAttribute && $removeLastSegmentOfAttribute
+<<<<<<< HEAD
             ? Str::replaceLast($lastSegmentOfAttribute, '', $attribute)
             : $attribute;
+=======
+                    ? Str::replaceLast($lastSegmentOfAttribute, '', $attribute)
+                    : $attribute;
+>>>>>>> upstream/main
 
         return is_array($data = data_get($this->data, $attribute))
             ? new Fluent($data)

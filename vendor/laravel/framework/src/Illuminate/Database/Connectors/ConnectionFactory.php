@@ -138,8 +138,13 @@ class ConnectionFactory
     protected function getReadWriteConfig(array $config, $type)
     {
         return isset($config[$type][0])
+<<<<<<< HEAD
             ? Arr::random($config[$type])
             : $config[$type];
+=======
+                        ? Arr::random($config[$type])
+                        : $config[$type];
+>>>>>>> upstream/main
     }
 
     /**
@@ -163,8 +168,13 @@ class ConnectionFactory
     protected function createPdoResolver(array $config)
     {
         return array_key_exists('host', $config)
+<<<<<<< HEAD
             ? $this->createPdoResolverWithHosts($config)
             : $this->createPdoResolverWithoutHosts($config);
+=======
+                            ? $this->createPdoResolverWithHosts($config)
+                            : $this->createPdoResolverWithoutHosts($config);
+>>>>>>> upstream/main
     }
 
     /**

@@ -119,12 +119,21 @@ class Schedule
         $container = Container::getInstance();
 
         $this->eventMutex = $container->bound(EventMutex::class)
+<<<<<<< HEAD
             ? $container->make(EventMutex::class)
             : $container->make(CacheEventMutex::class);
 
         $this->schedulingMutex = $container->bound(SchedulingMutex::class)
             ? $container->make(SchedulingMutex::class)
             : $container->make(CacheSchedulingMutex::class);
+=======
+                                ? $container->make(EventMutex::class)
+                                : $container->make(CacheEventMutex::class);
+
+        $this->schedulingMutex = $container->bound(SchedulingMutex::class)
+                                ? $container->make(SchedulingMutex::class)
+                                : $container->make(CacheSchedulingMutex::class);
+>>>>>>> upstream/main
     }
 
     /**

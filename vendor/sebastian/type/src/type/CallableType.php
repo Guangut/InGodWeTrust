@@ -165,6 +165,15 @@ final class CallableType extends Type
             [$className, $methodName] = $type->value();
         }
 
+<<<<<<< HEAD
+=======
+        /** @phpstan-ignore isset.variable */
+        assert(isset($className));
+
+        /** @phpstan-ignore isset.variable */
+        assert(isset($methodName));
+
+>>>>>>> upstream/main
         if (!class_exists($className)) {
             return false;
         }

@@ -52,8 +52,13 @@ class ResourceMakeCommand extends GeneratorCommand
     protected function getStub()
     {
         return $this->collection()
+<<<<<<< HEAD
             ? $this->resolveStubPath('/stubs/resource-collection.stub')
             : $this->resolveStubPath('/stubs/resource.stub');
+=======
+                    ? $this->resolveStubPath('/stubs/resource-collection.stub')
+                    : $this->resolveStubPath('/stubs/resource.stub');
+>>>>>>> upstream/main
     }
 
     /**
@@ -76,8 +81,13 @@ class ResourceMakeCommand extends GeneratorCommand
     protected function resolveStubPath($stub)
     {
         return file_exists($customPath = $this->laravel->basePath(trim($stub, '/')))
+<<<<<<< HEAD
             ? $customPath
             : __DIR__.$stub;
+=======
+                        ? $customPath
+                        : __DIR__.$stub;
+>>>>>>> upstream/main
     }
 
     /**

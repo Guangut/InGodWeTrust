@@ -174,8 +174,13 @@ class QueueFake extends QueueManager implements Fake, Queue
         );
 
         $this->isChainOfObjects($expectedChain)
+<<<<<<< HEAD
             ? $this->assertPushedWithChainOfObjects($job, $expectedChain, $callback)
             : $this->assertPushedWithChainOfClasses($job, $expectedChain, $callback);
+=======
+                ? $this->assertPushedWithChainOfObjects($job, $expectedChain, $callback)
+                : $this->assertPushedWithChainOfClasses($job, $expectedChain, $callback);
+>>>>>>> upstream/main
     }
 
     /**
@@ -379,10 +384,16 @@ class QueueFake extends QueueManager implements Fake, Queue
      */
     public function size($queue = null)
     {
+<<<<<<< HEAD
         return (new Collection($this->jobs))
             ->flatten(1)
             ->filter(fn ($job) => $job['queue'] === $queue)
             ->count();
+=======
+        return (new Collection($this->jobs))->flatten(1)->filter(
+            fn ($job) => $job['queue'] === $queue
+        )->count();
+>>>>>>> upstream/main
     }
 
     /**

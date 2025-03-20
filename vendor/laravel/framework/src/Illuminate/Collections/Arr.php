@@ -849,12 +849,21 @@ class Arr
 
         if (! array_is_list($array)) {
             $descending
+<<<<<<< HEAD
                 ? krsort($array, $options)
                 : ksort($array, $options);
         } else {
             $descending
                 ? rsort($array, $options)
                 : sort($array, $options);
+=======
+                    ? krsort($array, $options)
+                    : ksort($array, $options);
+        } else {
+            $descending
+                    ? rsort($array, $options)
+                    : sort($array, $options);
+>>>>>>> upstream/main
         }
 
         return $array;
@@ -943,6 +952,7 @@ class Arr
     }
 
     /**
+<<<<<<< HEAD
      * Partition the array into two arrays using the given callback.
      *
      * @template TKey of array-key
@@ -969,6 +979,8 @@ class Arr
     }
 
     /**
+=======
+>>>>>>> upstream/main
      * Filter items where the value is not null.
      *
      * @param  array  $array

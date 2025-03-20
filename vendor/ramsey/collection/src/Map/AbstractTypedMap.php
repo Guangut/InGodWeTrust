@@ -37,6 +37,10 @@ abstract class AbstractTypedMap extends AbstractMap implements TypedMapInterface
      * @param T $value
      *
      * @inheritDoc
+<<<<<<< HEAD
+=======
+     * @psalm-suppress MoreSpecificImplementedParamType
+>>>>>>> upstream/main
      */
     public function offsetSet(mixed $offset, mixed $value): void
     {

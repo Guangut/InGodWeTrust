@@ -141,8 +141,12 @@ trait DatabaseTruncation
     protected function connectionsToTruncate(): array
     {
         return property_exists($this, 'connectionsToTruncate')
+<<<<<<< HEAD
             ? $this->connectionsToTruncate
             : [null];
+=======
+                    ? $this->connectionsToTruncate : [null];
+>>>>>>> upstream/main
     }
 
     /**

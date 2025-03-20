@@ -527,7 +527,12 @@ class Response implements ArrayAccess, Stringable
     public function __call($method, $parameters)
     {
         return static::hasMacro($method)
+<<<<<<< HEAD
             ? $this->macroCall($method, $parameters)
             : $this->response->{$method}(...$parameters);
+=======
+                    ? $this->macroCall($method, $parameters)
+                    : $this->response->{$method}(...$parameters);
+>>>>>>> upstream/main
     }
 }

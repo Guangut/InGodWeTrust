@@ -114,8 +114,13 @@ class SqlServerGrammar extends Grammar
     protected function compileIndexHint(Builder $query, $indexHint)
     {
         return $indexHint->type === 'force'
+<<<<<<< HEAD
             ? "with (index({$indexHint->index}))"
             : '';
+=======
+                    ? "with (index({$indexHint->index}))"
+                    : '';
+>>>>>>> upstream/main
     }
 
     /**
@@ -281,8 +286,13 @@ class SqlServerGrammar extends Grammar
         $sql = parent::compileDeleteWithoutJoins($query, $table, $where);
 
         return ! is_null($query->limit) && $query->limit > 0 && $query->offset <= 0
+<<<<<<< HEAD
             ? Str::replaceFirst('delete', 'delete top ('.$query->limit.')', $sql)
             : $sql;
+=======
+                        ? Str::replaceFirst('delete', 'delete top ('.$query->limit.')', $sql)
+                        : $sql;
+>>>>>>> upstream/main
     }
 
     /**

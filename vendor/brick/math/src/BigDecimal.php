@@ -572,6 +572,7 @@ final class BigDecimal extends BigNumber
     }
 
     /**
+<<<<<<< HEAD
      * Returns the number of significant digits in the number.
      *
      * This is the number of digits to both sides of the decimal point, stripped of leading zeros.
@@ -599,6 +600,8 @@ final class BigDecimal extends BigNumber
     }
 
     /**
+=======
+>>>>>>> upstream/main
      * Returns a string representing the integral part of this decimal number.
      *
      * Example: `-123.456` => `-123`.

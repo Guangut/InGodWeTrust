@@ -90,8 +90,13 @@ class RateLimited
         foreach ($limits as $limit) {
             if ($this->limiter->tooManyAttempts($limit->key, $limit->maxAttempts)) {
                 return $this->shouldRelease
+<<<<<<< HEAD
                     ? $job->release($this->getTimeUntilNextRetry($limit->key))
                     : false;
+=======
+                        ? $job->release($this->getTimeUntilNextRetry($limit->key))
+                        : false;
+>>>>>>> upstream/main
             }
 
             $this->limiter->hit($limit->key, $limit->decaySeconds);

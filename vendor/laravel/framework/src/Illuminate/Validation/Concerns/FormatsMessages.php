@@ -84,8 +84,13 @@ trait FormatsMessages
         $inlineEntry = $this->getFromLocalArray($attribute, Str::snake($rule));
 
         return is_array($inlineEntry) && in_array($rule, $this->sizeRules)
+<<<<<<< HEAD
             ? $inlineEntry[$this->getAttributeType($attribute)]
             : $inlineEntry;
+=======
+                    ? $inlineEntry[$this->getAttributeType($attribute)]
+                    : $inlineEntry;
+>>>>>>> upstream/main
     }
 
     /**
@@ -267,8 +272,12 @@ trait FormatsMessages
         $primaryAttribute = $this->getPrimaryAttribute($attribute);
 
         $expectedAttributes = $attribute != $primaryAttribute
+<<<<<<< HEAD
             ? [$attribute, $primaryAttribute]
             : [$attribute];
+=======
+                    ? [$attribute, $primaryAttribute] : [$attribute];
+>>>>>>> upstream/main
 
         foreach ($expectedAttributes as $name) {
             // The developer may dynamically specify the array of custom attributes on this
@@ -291,8 +300,13 @@ trait FormatsMessages
         // modify it with any of these replacements before we display the name.
         if (isset($this->implicitAttributes[$primaryAttribute])) {
             return ($formatter = $this->implicitAttributesFormatter)
+<<<<<<< HEAD
                 ? $formatter($attribute)
                 : $attribute;
+=======
+                            ? $formatter($attribute)
+                            : $attribute;
+>>>>>>> upstream/main
         }
 
         return str_replace('_', ' ', Str::snake($attribute));

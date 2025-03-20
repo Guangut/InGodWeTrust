@@ -60,7 +60,11 @@ final readonly class CodeUnitCollection implements Countable, IteratorAggregate
 
     public function isEmpty(): bool
     {
+<<<<<<< HEAD
         return $this->codeUnits === [];
+=======
+        return empty($this->codeUnits);
+>>>>>>> upstream/main
     }
 
     public function mergeWith(self $other): self

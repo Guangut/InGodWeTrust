@@ -350,8 +350,13 @@ class Mailer implements MailerContract, MailQueueContract
     protected function sendMailable(MailableContract $mailable)
     {
         return $mailable instanceof ShouldQueue
+<<<<<<< HEAD
             ? $mailable->mailer($this->name)->queue($this->queue)
             : $mailable->mailer($this->name)->send($this);
+=======
+                        ? $mailable->mailer($this->name)->queue($this->queue)
+                        : $mailable->mailer($this->name)->send($this);
+>>>>>>> upstream/main
     }
 
     /**
@@ -441,8 +446,13 @@ class Mailer implements MailerContract, MailQueueContract
         $view = value($view, $data);
 
         return $view instanceof Htmlable
+<<<<<<< HEAD
             ? $view->toHtml()
             : $this->views->make($view, $data)->render();
+=======
+                        ? $view->toHtml()
+                        : $this->views->make($view, $data)->render();
+>>>>>>> upstream/main
     }
 
     /**

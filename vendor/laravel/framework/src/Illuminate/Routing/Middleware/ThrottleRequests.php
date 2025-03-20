@@ -241,8 +241,13 @@ class ThrottleRequests
         );
 
         return is_callable($responseCallback)
+<<<<<<< HEAD
             ? new HttpResponseException($responseCallback($request, $headers))
             : new ThrottleRequestsException('Too Many Attempts.', null, $headers);
+=======
+                    ? new HttpResponseException($responseCallback($request, $headers))
+                    : new ThrottleRequestsException('Too Many Attempts.', null, $headers);
+>>>>>>> upstream/main
     }
 
     /**

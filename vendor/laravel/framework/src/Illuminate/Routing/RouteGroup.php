@@ -46,8 +46,13 @@ class RouteGroup
     {
         if (isset($new['namespace'])) {
             return isset($old['namespace']) && ! str_starts_with($new['namespace'], '\\')
+<<<<<<< HEAD
                 ? trim($old['namespace'], '\\').'\\'.trim($new['namespace'], '\\')
                 : trim($new['namespace'], '\\');
+=======
+                    ? trim($old['namespace'], '\\').'\\'.trim($new['namespace'], '\\')
+                    : trim($new['namespace'], '\\');
+>>>>>>> upstream/main
         }
 
         return $old['namespace'] ?? null;

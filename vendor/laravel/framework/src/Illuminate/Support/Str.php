@@ -454,7 +454,11 @@ class Str
      */
     public static function wrap($value, $before, $after = null)
     {
+<<<<<<< HEAD
         return $before.$value.($after ?? $before);
+=======
+        return $before.$value.($after ??= $before);
+>>>>>>> upstream/main
     }
 
     /**
@@ -623,7 +627,11 @@ class Str
 
         try {
             $factoryUuid = $factory->fromString($value);
+<<<<<<< HEAD
         } catch (InvalidUuidStringException) {
+=======
+        } catch (InvalidUuidStringException $ex) {
+>>>>>>> upstream/main
             return false;
         }
 
@@ -1051,10 +1059,15 @@ class Str
                 ']', '|', ':', ';',
             ] : null,
             'spaces' => $spaces === true ? [' '] : null,
+<<<<<<< HEAD
         ]))
             ->filter()
             ->each(fn ($c) => $password->push($c[random_int(0, count($c) - 1)]))
             ->flatten();
+=======
+        ]))->filter()->each(fn ($c) => $password->push($c[random_int(0, count($c) - 1)])
+        )->flatten();
+>>>>>>> upstream/main
 
         $length = $length - $password->count();
 
@@ -1234,8 +1247,13 @@ class Str
         }
 
         return $caseSensitive
+<<<<<<< HEAD
             ? str_replace($search, $replace, $subject)
             : str_ireplace($search, $replace, $subject);
+=======
+                ? str_replace($search, $replace, $subject)
+                : str_ireplace($search, $replace, $subject);
+>>>>>>> upstream/main
     }
 
     /**
@@ -1367,8 +1385,13 @@ class Str
         }
 
         return $caseSensitive
+<<<<<<< HEAD
             ? str_replace($search, '', $subject)
             : str_ireplace($search, '', $subject);
+=======
+                    ? str_replace($search, '', $subject)
+                    : str_ireplace($search, '', $subject);
+>>>>>>> upstream/main
     }
 
     /**
@@ -1848,8 +1871,13 @@ class Str
     public static function uuid()
     {
         return static::$uuidFactory
+<<<<<<< HEAD
             ? call_user_func(static::$uuidFactory)
             : Uuid::uuid4();
+=======
+                    ? call_user_func(static::$uuidFactory)
+                    : Uuid::uuid4();
+>>>>>>> upstream/main
     }
 
     /**
@@ -1861,8 +1889,13 @@ class Str
     public static function uuid7($time = null)
     {
         return static::$uuidFactory
+<<<<<<< HEAD
             ? call_user_func(static::$uuidFactory)
             : Uuid::uuid7($time);
+=======
+                    ? call_user_func(static::$uuidFactory)
+                    : Uuid::uuid7($time);
+>>>>>>> upstream/main
     }
 
     /**

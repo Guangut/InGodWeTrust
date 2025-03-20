@@ -1018,7 +1018,11 @@ class Builder implements BuilderContract
      * @param  string  $pageName
      * @param  int|null  $page
      * @param  \Closure|int|null  $total
+<<<<<<< HEAD
      * @return \Illuminate\Pagination\LengthAwarePaginator
+=======
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+>>>>>>> upstream/main
      *
      * @throws \InvalidArgumentException
      */
@@ -1505,8 +1509,12 @@ class Builder implements BuilderContract
         // scope so that we can properly group the added scope constraints in the
         // query as their own isolated nested where statement and avoid issues.
         $originalWhereCount = is_null($query->wheres)
+<<<<<<< HEAD
             ? 0
             : count($query->wheres);
+=======
+                    ? 0 : count($query->wheres);
+>>>>>>> upstream/main
 
         $result = $scope(...$parameters) ?? $this;
 
@@ -1596,7 +1604,11 @@ class Builder implements BuilderContract
     }
 
     /**
+<<<<<<< HEAD
      * Specify relationships that should be eager loaded.
+=======
+     * Set the relationships that should be eager loaded.
+>>>>>>> upstream/main
      *
      * @param  array<array-key, array|(\Closure(\Illuminate\Database\Eloquent\Relations\Relation<*,*,*>): mixed)|string>|string  $relations
      * @param  (\Closure(\Illuminate\Database\Eloquent\Relations\Relation<*,*,*>): mixed)|string|null  $callback
@@ -1780,8 +1792,13 @@ class Builder implements BuilderContract
         return [explode(':', $name)[0], static function ($query) use ($name) {
             $query->select(array_map(static function ($column) use ($query) {
                 return $query instanceof BelongsToMany
+<<<<<<< HEAD
                     ? $query->getRelated()->qualifyColumn($column)
                     : $column;
+=======
+                        ? $query->getRelated()->qualifyColumn($column)
+                        : $column;
+>>>>>>> upstream/main
             }, explode(',', explode(':', $name)[1])));
         }];
     }

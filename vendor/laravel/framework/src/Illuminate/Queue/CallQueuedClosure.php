@@ -78,8 +78,13 @@ class CallQueuedClosure implements ShouldQueue
     public function onFailure($callback)
     {
         $this->failureCallbacks[] = $callback instanceof Closure
+<<<<<<< HEAD
             ? new SerializableClosure($callback)
             : $callback;
+=======
+                        ? new SerializableClosure($callback)
+                        : $callback;
+>>>>>>> upstream/main
 
         return $this;
     }

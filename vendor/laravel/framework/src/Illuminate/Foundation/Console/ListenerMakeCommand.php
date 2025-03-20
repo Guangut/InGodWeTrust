@@ -74,8 +74,13 @@ class ListenerMakeCommand extends GeneratorCommand
     protected function resolveStubPath($stub)
     {
         return file_exists($customPath = $this->laravel->basePath(trim($stub, '/')))
+<<<<<<< HEAD
             ? $customPath
             : __DIR__.$stub;
+=======
+                        ? $customPath
+                        : __DIR__.$stub;
+>>>>>>> upstream/main
     }
 
     /**
@@ -87,6 +92,7 @@ class ListenerMakeCommand extends GeneratorCommand
     {
         if ($this->option('queued')) {
             return $this->option('event')
+<<<<<<< HEAD
                 ? $this->resolveStubPath('/stubs/listener.typed.queued.stub')
                 : $this->resolveStubPath('/stubs/listener.queued.stub');
         }
@@ -94,6 +100,15 @@ class ListenerMakeCommand extends GeneratorCommand
         return $this->option('event')
             ? $this->resolveStubPath('/stubs/listener.typed.stub')
             : $this->resolveStubPath('/stubs/listener.stub');
+=======
+                        ? $this->resolveStubPath('/stubs/listener.typed.queued.stub')
+                        : $this->resolveStubPath('/stubs/listener.queued.stub');
+        }
+
+        return $this->option('event')
+                    ? $this->resolveStubPath('/stubs/listener.typed.stub')
+                    : $this->resolveStubPath('/stubs/listener.stub');
+>>>>>>> upstream/main
     }
 
     /**

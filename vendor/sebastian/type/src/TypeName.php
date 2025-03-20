@@ -48,6 +48,7 @@ final readonly class TypeName
     }
 
     /**
+<<<<<<< HEAD
      * @param ReflectionClass<object> $type
      */
     public static function fromReflection(ReflectionClass $type): self
@@ -59,6 +60,15 @@ final readonly class TypeName
         return new self(
             $type->getNamespaceName(),
             $simpleName,
+=======
+     * @phpstan-ignore missingType.generics
+     */
+    public static function fromReflection(ReflectionClass $type): self
+    {
+        return new self(
+            $type->getNamespaceName(),
+            $type->getShortName(),
+>>>>>>> upstream/main
         );
     }
 

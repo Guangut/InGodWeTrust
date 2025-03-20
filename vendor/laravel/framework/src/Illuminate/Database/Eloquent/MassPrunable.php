@@ -25,8 +25,13 @@ trait MassPrunable
 
         do {
             $total += $count = in_array(SoftDeletes::class, class_uses_recursive(get_class($this)))
+<<<<<<< HEAD
                 ? $query->forceDelete()
                 : $query->delete();
+=======
+                        ? $query->forceDelete()
+                        : $query->delete();
+>>>>>>> upstream/main
 
             if ($count > 0) {
                 event(new ModelsPruned(static::class, $total));

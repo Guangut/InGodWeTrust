@@ -194,8 +194,13 @@ class RetryCommand extends Command
             $retryUntil = $instance->retryUntil();
 
             $payload['retryUntil'] = $retryUntil instanceof DateTimeInterface
+<<<<<<< HEAD
                 ? $retryUntil->getTimestamp()
                 : $retryUntil;
+=======
+                                        ? $retryUntil->getTimestamp()
+                                        : $retryUntil;
+>>>>>>> upstream/main
         }
 
         return json_encode($payload);

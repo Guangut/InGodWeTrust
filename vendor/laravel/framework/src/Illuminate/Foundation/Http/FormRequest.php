@@ -229,8 +229,13 @@ class FormRequest extends Request implements ValidatesWhenResolved
     public function safe(?array $keys = null)
     {
         return is_array($keys)
+<<<<<<< HEAD
             ? $this->validator->safe()->only($keys)
             : $this->validator->safe();
+=======
+                    ? $this->validator->safe()->only($keys)
+                    : $this->validator->safe();
+>>>>>>> upstream/main
     }
 
     /**

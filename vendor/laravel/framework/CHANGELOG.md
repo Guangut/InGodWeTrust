@@ -1,5 +1,6 @@
 # Release Notes for 12.x
 
+<<<<<<< HEAD
 ## [Unreleased](https://github.com/laravel/framework/compare/v12.2.0...12.x)
 
 ## [v12.2.0](https://github.com/laravel/framework/compare/v12.1.1...v12.2.0) - 2025-03-12
@@ -76,6 +77,9 @@
 * [12.x] Introduce `ContextLogProcessor` by [@cosmastech](https://github.com/cosmastech) in https://github.com/laravel/framework/pull/54851
 
 ## [v12.0.1](https://github.com/laravel/framework/compare/v12.0.0...v12.0.1) - 2025-02-24
+=======
+## [Unreleased](https://github.com/laravel/framework/compare/v12.0.0...12.x)
+>>>>>>> upstream/main
 
 ## [v12.0.0](https://github.com/laravel/framework/compare/v11.44.0..v12.0.0...v12.0.0) - 2025-02-24
 

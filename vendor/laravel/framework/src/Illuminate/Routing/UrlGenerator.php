@@ -541,8 +541,13 @@ class UrlGenerator implements UrlGeneratorContract
     {
         $parameters = Collection::wrap($parameters)->map(function ($value, $key) use ($route) {
             return $value instanceof UrlRoutable && $route->bindingFieldFor($key)
+<<<<<<< HEAD
                 ? $value->{$route->bindingFieldFor($key)}
                 : $value;
+=======
+                    ? $value->{$route->bindingFieldFor($key)}
+                    : $value;
+>>>>>>> upstream/main
         })->all();
 
         array_walk_recursive($parameters, function (&$item) {

@@ -419,9 +419,12 @@ class CacheManager implements FactoryContract
      *
      * @param  string  $driver
      * @param  \Closure  $callback
+<<<<<<< HEAD
      *
      * @param-closure-this  $this  $callback
      *
+=======
+>>>>>>> upstream/main
      * @return $this
      */
     public function extend($driver, Closure $callback)

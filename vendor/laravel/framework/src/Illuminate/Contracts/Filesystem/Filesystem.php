@@ -173,7 +173,11 @@ interface Filesystem
      *
      * @param  string|null  $directory
      * @param  bool  $recursive
+<<<<<<< HEAD
      * @return array<string>
+=======
+     * @return array
+>>>>>>> upstream/main
      */
     public function files($directory = null, $recursive = false);
 
@@ -181,7 +185,11 @@ interface Filesystem
      * Get all of the files from the given directory (recursive).
      *
      * @param  string|null  $directory
+<<<<<<< HEAD
      * @return array<string>
+=======
+     * @return array
+>>>>>>> upstream/main
      */
     public function allFiles($directory = null);
 
@@ -190,7 +198,11 @@ interface Filesystem
      *
      * @param  string|null  $directory
      * @param  bool  $recursive
+<<<<<<< HEAD
      * @return array<string>
+=======
+     * @return array
+>>>>>>> upstream/main
      */
     public function directories($directory = null, $recursive = false);
 
@@ -198,7 +210,11 @@ interface Filesystem
      * Get all (recursive) of the directories within a given directory.
      *
      * @param  string|null  $directory
+<<<<<<< HEAD
      * @return array<string>
+=======
+     * @return array
+>>>>>>> upstream/main
      */
     public function allDirectories($directory = null);
 

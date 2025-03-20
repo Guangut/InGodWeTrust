@@ -48,7 +48,11 @@ trait DatabaseTransactions
     protected function connectionsToTransact()
     {
         return property_exists($this, 'connectionsToTransact')
+<<<<<<< HEAD
             ? $this->connectionsToTransact
             : [null];
+=======
+                            ? $this->connectionsToTransact : [null];
+>>>>>>> upstream/main
     }
 }

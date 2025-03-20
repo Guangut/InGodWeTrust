@@ -153,6 +153,7 @@ trait HasRelationships
         $secondKey = $secondKey ?: $through->getForeignKey();
 
         return $this->newHasOneThrough(
+<<<<<<< HEAD
             $this->newRelatedInstance($related)->newQuery(),
             $this,
             $through,
@@ -160,6 +161,11 @@ trait HasRelationships
             $secondKey,
             $localKey ?: $this->getKeyName(),
             $secondLocalKey ?: $through->getKeyName(),
+=======
+            $this->newRelatedInstance($related)->newQuery(), $this, $through,
+            $firstKey, $secondKey, $localKey ?: $this->getKeyName(),
+            $secondLocalKey ?: $through->getKeyName()
+>>>>>>> upstream/main
         );
     }
 
@@ -306,8 +312,13 @@ trait HasRelationships
         // the relationship. In this case we'll just pass in a dummy query where we
         // need to remove any eager loads that may already be defined on a model.
         return is_null($class = $this->getAttributeFromArray($type)) || $class === ''
+<<<<<<< HEAD
             ? $this->morphEagerTo($name, $type, $id, $ownerKey)
             : $this->morphInstanceTo($class, $name, $type, $id, $ownerKey);
+=======
+                    ? $this->morphEagerTo($name, $type, $id, $ownerKey)
+                    : $this->morphInstanceTo($class, $name, $type, $id, $ownerKey);
+>>>>>>> upstream/main
     }
 
     /**
@@ -564,6 +575,7 @@ trait HasRelationships
      * @param  string|null  $parentKey
      * @param  string|null  $relatedKey
      * @param  string|null  $relation
+<<<<<<< HEAD
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany<TRelatedModel, $this, \Illuminate\Database\Eloquent\Relations\Pivot>
      */
     public function belongsToMany(
@@ -575,6 +587,13 @@ trait HasRelationships
         $relatedKey = null,
         $relation = null,
     ) {
+=======
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany<TRelatedModel, $this>
+     */
+    public function belongsToMany($related, $table = null, $foreignPivotKey = null, $relatedPivotKey = null,
+                                  $parentKey = null, $relatedKey = null, $relation = null)
+    {
+>>>>>>> upstream/main
         // If no relationship name was passed, we will pull backtraces to get the
         // name of the calling function. We will use that function name as the
         // title of this relation since that is a great convention to apply.
@@ -599,6 +618,7 @@ trait HasRelationships
         }
 
         return $this->newBelongsToMany(
+<<<<<<< HEAD
             $instance->newQuery(),
             $this,
             $table,
@@ -607,6 +627,11 @@ trait HasRelationships
             $parentKey ?: $this->getKeyName(),
             $relatedKey ?: $instance->getKeyName(),
             $relation,
+=======
+            $instance->newQuery(), $this, $table, $foreignPivotKey,
+            $relatedPivotKey, $parentKey ?: $this->getKeyName(),
+            $relatedKey ?: $instance->getKeyName(), $relation
+>>>>>>> upstream/main
         );
     }
 
@@ -624,6 +649,7 @@ trait HasRelationships
      * @param  string  $parentKey
      * @param  string  $relatedKey
      * @param  string|null  $relationName
+<<<<<<< HEAD
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany<TRelatedModel, TDeclaringModel, \Illuminate\Database\Eloquent\Relations\Pivot>
      */
     protected function newBelongsToMany(
@@ -636,6 +662,13 @@ trait HasRelationships
         $relatedKey,
         $relationName = null,
     ) {
+=======
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany<TRelatedModel, TDeclaringModel>
+     */
+    protected function newBelongsToMany(Builder $query, Model $parent, $table, $foreignPivotKey, $relatedPivotKey,
+                                        $parentKey, $relatedKey, $relationName = null)
+    {
+>>>>>>> upstream/main
         return new BelongsToMany($query, $parent, $table, $foreignPivotKey, $relatedPivotKey, $parentKey, $relatedKey, $relationName);
     }
 
@@ -655,6 +688,7 @@ trait HasRelationships
      * @param  bool  $inverse
      * @return \Illuminate\Database\Eloquent\Relations\MorphToMany<TRelatedModel, $this>
      */
+<<<<<<< HEAD
     public function morphToMany(
         $related,
         $name,
@@ -666,6 +700,12 @@ trait HasRelationships
         $relation = null,
         $inverse = false,
     ) {
+=======
+    public function morphToMany($related, $name, $table = null, $foreignPivotKey = null,
+                                $relatedPivotKey = null, $parentKey = null,
+                                $relatedKey = null, $relation = null, $inverse = false)
+    {
+>>>>>>> upstream/main
         $relation = $relation ?: $this->guessBelongsToManyRelation();
 
         // First, we will need to determine the foreign key and "other key" for the
@@ -689,6 +729,7 @@ trait HasRelationships
         }
 
         return $this->newMorphToMany(
+<<<<<<< HEAD
             $instance->newQuery(),
             $this,
             $name,
@@ -699,6 +740,11 @@ trait HasRelationships
             $relatedKey ?: $instance->getKeyName(),
             $relation,
             $inverse,
+=======
+            $instance->newQuery(), $this, $name, $table,
+            $foreignPivotKey, $relatedPivotKey, $parentKey ?: $this->getKeyName(),
+            $relatedKey ?: $instance->getKeyName(), $relation, $inverse
+>>>>>>> upstream/main
         );
     }
 
@@ -720,6 +766,7 @@ trait HasRelationships
      * @param  bool  $inverse
      * @return \Illuminate\Database\Eloquent\Relations\MorphToMany<TRelatedModel, TDeclaringModel>
      */
+<<<<<<< HEAD
     protected function newMorphToMany(
         Builder $query,
         Model $parent,
@@ -744,6 +791,14 @@ trait HasRelationships
             $relationName,
             $inverse,
         );
+=======
+    protected function newMorphToMany(Builder $query, Model $parent, $name, $table, $foreignPivotKey,
+                                      $relatedPivotKey, $parentKey, $relatedKey,
+                                      $relationName = null, $inverse = false)
+    {
+        return new MorphToMany($query, $parent, $name, $table, $foreignPivotKey, $relatedPivotKey, $parentKey, $relatedKey,
+            $relationName, $inverse);
+>>>>>>> upstream/main
     }
 
     /**
@@ -761,6 +816,7 @@ trait HasRelationships
      * @param  string|null  $relation
      * @return \Illuminate\Database\Eloquent\Relations\MorphToMany<TRelatedModel, $this>
      */
+<<<<<<< HEAD
     public function morphedByMany(
         $related,
         $name,
@@ -771,6 +827,11 @@ trait HasRelationships
         $relatedKey = null,
         $relation = null,
     ) {
+=======
+    public function morphedByMany($related, $name, $table = null, $foreignPivotKey = null,
+                                  $relatedPivotKey = null, $parentKey = null, $relatedKey = null, $relation = null)
+    {
+>>>>>>> upstream/main
         $foreignPivotKey = $foreignPivotKey ?: $this->getForeignKey();
 
         // For the inverse of the polymorphic many-to-many relations, we will change
@@ -779,6 +840,7 @@ trait HasRelationships
         $relatedPivotKey = $relatedPivotKey ?: $name.'_id';
 
         return $this->morphToMany(
+<<<<<<< HEAD
             $related,
             $name,
             $table,
@@ -788,6 +850,10 @@ trait HasRelationships
             $relatedKey,
             $relation,
             true,
+=======
+            $related, $name, $table, $foreignPivotKey,
+            $relatedPivotKey, $parentKey, $relatedKey, $relation, true
+>>>>>>> upstream/main
         );
     }
 
@@ -821,9 +887,14 @@ trait HasRelationships
         // sorted alphabetically and concatenated with an underscore, so we can
         // just sort the models and join them together to get the table name.
         $segments = [
+<<<<<<< HEAD
             $instance
                 ? $instance->joiningTableSegment()
                 : Str::snake(class_basename($related)),
+=======
+            $instance ? $instance->joiningTableSegment()
+                      : Str::snake(class_basename($related)),
+>>>>>>> upstream/main
             $this->joiningTableSegment(),
         ];
 

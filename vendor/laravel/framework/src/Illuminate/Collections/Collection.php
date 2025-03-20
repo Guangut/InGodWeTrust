@@ -1441,10 +1441,16 @@ class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerabl
      * Chunk the collection into chunks of the given size.
      *
      * @param  int  $size
+<<<<<<< HEAD
      * @param  bool  $preserveKeys
      * @return ($preserveKeys is true ? static<int, static> : static<int, static<int, TValue>>)
      */
     public function chunk($size, $preserveKeys = true)
+=======
+     * @return static<int, static>
+     */
+    public function chunk($size)
+>>>>>>> upstream/main
     {
         if ($size <= 0) {
             return new static;
@@ -1452,7 +1458,11 @@ class Collection implements ArrayAccess, CanBeEscapedWhenCastToString, Enumerabl
 
         $chunks = [];
 
+<<<<<<< HEAD
         foreach (array_chunk($this->items, $size, $preserveKeys) as $chunk) {
+=======
+        foreach (array_chunk($this->items, $size, true) as $chunk) {
+>>>>>>> upstream/main
             $chunks[] = new static($chunk);
         }
 

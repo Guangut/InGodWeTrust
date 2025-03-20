@@ -144,8 +144,13 @@ abstract class Grammar
     {
         return (new Collection($segments))->map(function ($segment, $key) use ($segments) {
             return $key == 0 && count($segments) > 1
+<<<<<<< HEAD
                 ? $this->wrapTable($segment)
                 : $this->wrapValue($segment);
+=======
+                            ? $this->wrapTable($segment)
+                            : $this->wrapValue($segment);
+>>>>>>> upstream/main
         })->implode('.');
     }
 

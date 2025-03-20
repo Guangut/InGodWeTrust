@@ -482,8 +482,13 @@ abstract class Grammar extends BaseGrammar
         }
 
         return is_bool($value)
+<<<<<<< HEAD
             ? "'".(int) $value."'"
             : "'".(string) $value."'";
+=======
+                    ? "'".(int) $value."'"
+                    : "'".(string) $value."'";
+>>>>>>> upstream/main
     }
 
     /**

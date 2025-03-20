@@ -10,7 +10,10 @@
 namespace SebastianBergmann\Type;
 
 use function gettype;
+<<<<<<< HEAD
 use function is_object;
+=======
+>>>>>>> upstream/main
 use function strtolower;
 
 /**
@@ -32,7 +35,11 @@ abstract class Type
 
         $typeName = gettype($value);
 
+<<<<<<< HEAD
         if (is_object($value)) {
+=======
+        if ($typeName === 'object') {
+>>>>>>> upstream/main
             return new ObjectType(TypeName::fromQualifiedName($value::class), $allowsNull);
         }
 
@@ -62,7 +69,10 @@ abstract class Type
             'void'         => new VoidType,
             'array', 'bool', 'boolean', 'double', 'float', 'int', 'integer', 'real', 'resource', 'resource (closed)', 'string' => new SimpleType($typeName, $allowsNull),
             'mixed' => new MixedType,
+<<<<<<< HEAD
             /** @phpstan-ignore argument.type */
+=======
+>>>>>>> upstream/main
             default => new ObjectType(TypeName::fromQualifiedName($typeName), $allowsNull),
         };
     }

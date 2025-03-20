@@ -398,8 +398,13 @@ class FilesystemAdapter implements CloudFilesystemContract
     public function put($path, $contents, $options = [])
     {
         $options = is_string($options)
+<<<<<<< HEAD
             ? ['visibility' => $options]
             : (array) $options;
+=======
+                     ? ['visibility' => $options]
+                     : (array) $options;
+>>>>>>> upstream/main
 
         // If the given contents is actually a file or uploaded file instance than we will
         // automatically store the file using a stream. This provides a convenient path
@@ -753,8 +758,13 @@ class FilesystemAdapter implements CloudFilesystemContract
     protected function getFtpUrl($path)
     {
         return isset($this->config['url'])
+<<<<<<< HEAD
             ? $this->concatPathToUrl($this->config['url'], $path)
             : $path;
+=======
+                ? $this->concatPathToUrl($this->config['url'], $path)
+                : $path;
+>>>>>>> upstream/main
     }
 
     /**

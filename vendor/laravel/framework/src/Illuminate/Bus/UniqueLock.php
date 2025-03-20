@@ -33,12 +33,21 @@ class UniqueLock
     public function acquire($job)
     {
         $uniqueFor = method_exists($job, 'uniqueFor')
+<<<<<<< HEAD
             ? $job->uniqueFor()
             : ($job->uniqueFor ?? 0);
 
         $cache = method_exists($job, 'uniqueVia')
             ? $job->uniqueVia()
             : $this->cache;
+=======
+                    ? $job->uniqueFor()
+                    : ($job->uniqueFor ?? 0);
+
+        $cache = method_exists($job, 'uniqueVia')
+                    ? $job->uniqueVia()
+                    : $this->cache;
+>>>>>>> upstream/main
 
         return (bool) $cache->lock($this->getKey($job), $uniqueFor)->get();
     }
@@ -52,8 +61,13 @@ class UniqueLock
     public function release($job)
     {
         $cache = method_exists($job, 'uniqueVia')
+<<<<<<< HEAD
             ? $job->uniqueVia()
             : $this->cache;
+=======
+                    ? $job->uniqueVia()
+                    : $this->cache;
+>>>>>>> upstream/main
 
         $cache->lock($this->getKey($job))->forceRelease();
     }
@@ -67,8 +81,13 @@ class UniqueLock
     public static function getKey($job)
     {
         $uniqueId = method_exists($job, 'uniqueId')
+<<<<<<< HEAD
             ? $job->uniqueId()
             : ($job->uniqueId ?? '');
+=======
+                    ? $job->uniqueId()
+                    : ($job->uniqueId ?? '');
+>>>>>>> upstream/main
 
         return 'laravel_unique_job:'.get_class($job).':'.$uniqueId;
     }

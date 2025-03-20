@@ -792,8 +792,12 @@ class Route
     public function getDomain()
     {
         return isset($this->action['domain'])
+<<<<<<< HEAD
             ? str_replace(['http://', 'https://'], '', $this->action['domain'])
             : null;
+=======
+                ? str_replace(['http://', 'https://'], '', $this->action['domain']) : null;
+>>>>>>> upstream/main
     }
 
     /**
@@ -1095,8 +1099,13 @@ class Route
         $ability = enum_value($ability);
 
         return empty($models)
+<<<<<<< HEAD
             ? $this->middleware(['can:'.$ability])
             : $this->middleware(['can:'.$ability.','.implode(',', Arr::wrap($models))]);
+=======
+                    ? $this->middleware(['can:'.$ability])
+                    : $this->middleware(['can:'.$ability.','.implode(',', Arr::wrap($models))]);
+>>>>>>> upstream/main
     }
 
     /**
@@ -1139,6 +1148,7 @@ class Route
      */
     protected function staticallyProvidedControllerMiddleware(string $class, string $method)
     {
+<<<<<<< HEAD
         return (new Collection($class::middleware()))
             ->map(function ($middleware) {
                 return $middleware instanceof Middleware
@@ -1155,6 +1165,17 @@ class Route
             ->flatten()
             ->values()
             ->all();
+=======
+        return (new Collection($class::middleware()))->map(function ($middleware) {
+            return $middleware instanceof Middleware
+                ? $middleware
+                : new Middleware($middleware);
+        })->reject(function ($middleware) use ($method) {
+            return static::methodExcludedByOptions(
+                $method, ['only' => $middleware->only, 'except' => $middleware->except]
+            );
+        })->map->middleware->flatten()->values()->all();
+>>>>>>> upstream/main
     }
 
     /**

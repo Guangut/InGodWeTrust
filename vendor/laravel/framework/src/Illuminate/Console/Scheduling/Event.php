@@ -743,8 +743,13 @@ class Event
             $output = $this->output && is_file($this->output) ? file_get_contents($this->output) : '';
 
             return $onlyIfOutputExists && empty($output)
+<<<<<<< HEAD
                 ? null
                 : $container->call($callback, ['output' => new Stringable($output)]);
+=======
+                            ? null
+                            : $container->call($callback, ['output' => new Stringable($output)]);
+>>>>>>> upstream/main
         };
     }
 

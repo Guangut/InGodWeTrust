@@ -66,8 +66,13 @@ class FactoryMakeCommand extends GeneratorCommand
         $factory = class_basename(Str::ucfirst(str_replace('Factory', '', $name)));
 
         $namespaceModel = $this->option('model')
+<<<<<<< HEAD
             ? $this->qualifyModel($this->option('model'))
             : $this->qualifyModel($this->guessModelName($name));
+=======
+                        ? $this->qualifyModel($this->option('model'))
+                        : $this->qualifyModel($this->guessModelName($name));
+>>>>>>> upstream/main
 
         $model = class_basename($namespaceModel);
 

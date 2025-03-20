@@ -176,10 +176,17 @@ class MorphTo extends BelongsTo
     protected function gatherKeysByType($type, $keyType)
     {
         return $keyType !== 'string'
+<<<<<<< HEAD
             ? array_keys($this->dictionary[$type])
             : array_map(function ($modelId) {
                 return (string) $modelId;
             }, array_filter(array_keys($this->dictionary[$type])));
+=======
+                    ? array_keys($this->dictionary[$type])
+                    : array_map(function ($modelId) {
+                        return (string) $modelId;
+                    }, array_filter(array_keys($this->dictionary[$type])));
+>>>>>>> upstream/main
     }
 
     /**
@@ -237,8 +244,13 @@ class MorphTo extends BelongsTo
     {
         if ($model instanceof Model) {
             $foreignKey = $this->ownerKey && $model->{$this->ownerKey}
+<<<<<<< HEAD
                 ? $this->ownerKey
                 : $model->getKeyName();
+=======
+                            ? $this->ownerKey
+                            : $model->getKeyName();
+>>>>>>> upstream/main
         }
 
         $this->parent->setAttribute(

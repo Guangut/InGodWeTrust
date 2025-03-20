@@ -24,7 +24,11 @@ namespace Ramsey\Collection;
  *
  * Example usage:
  *
+<<<<<<< HEAD
  * ```
+=======
+ * ``` php
+>>>>>>> upstream/main
  * $foo = new \My\Foo();
  * $set = new Set(\My\Foo::class);
  *

@@ -13,6 +13,7 @@ use Illuminate\Support\DateFactory;
  * @method static void useCallable(callable $callable)
  * @method static void useClass(string $dateClass)
  * @method static void useFactory(object $factory)
+<<<<<<< HEAD
  * @method static \Illuminate\Support\Carbon create($year = 0, $month = 1, $day = 1, $hour = 0, $minute = 0, $second = 0, $timezone = null)
  * @method static \Illuminate\Support\Carbon createFromDate($year = null, $month = null, $day = null, $timezone = null)
  * @method static \Illuminate\Support\Carbon|false createFromFormat($format, $time, $timezone = null)
@@ -23,6 +24,18 @@ use Illuminate\Support\DateFactory;
  * @method static \Illuminate\Support\Carbon createFromTimestampUTC($timestamp)
  * @method static \Illuminate\Support\Carbon createMidnightDate($year = null, $month = null, $day = null, $timezone = null)
  * @method static \Illuminate\Support\Carbon|false createSafe($year = null, $month = null, $day = null, $hour = null, $minute = null, $second = null, $timezone = null)
+=======
+ * @method static \Illuminate\Support\Carbon create($year = 0, $month = 1, $day = 1, $hour = 0, $minute = 0, $second = 0, $tz = null)
+ * @method static \Illuminate\Support\Carbon createFromDate($year = null, $month = null, $day = null, $tz = null)
+ * @method static \Illuminate\Support\Carbon|false createFromFormat($format, $time, $tz = null)
+ * @method static \Illuminate\Support\Carbon createFromTime($hour = 0, $minute = 0, $second = 0, $tz = null)
+ * @method static \Illuminate\Support\Carbon createFromTimeString($time, $tz = null)
+ * @method static \Illuminate\Support\Carbon createFromTimestamp($timestamp, $tz = null)
+ * @method static \Illuminate\Support\Carbon createFromTimestampMs($timestamp, $tz = null)
+ * @method static \Illuminate\Support\Carbon createFromTimestampUTC($timestamp)
+ * @method static \Illuminate\Support\Carbon createMidnightDate($year = null, $month = null, $day = null, $tz = null)
+ * @method static \Illuminate\Support\Carbon|false createSafe($year = null, $month = null, $day = null, $hour = null, $minute = null, $second = null, $tz = null)
+>>>>>>> upstream/main
  * @method static void disableHumanDiffOption($humanDiffOption)
  * @method static void enableHumanDiffOption($humanDiffOption)
  * @method static mixed executeWithLocale($locale, $func)
@@ -35,7 +48,11 @@ use Illuminate\Support\DateFactory;
  * @method static string getLocale()
  * @method static int getMidDayAt()
  * @method static \Illuminate\Support\Carbon|null getTestNow()
+<<<<<<< HEAD
  * @method static \Symfony\Contracts\Translation\TranslatorInterface getTranslator()
+=======
+ * @method static \Symfony\Component\Translation\TranslatorInterface getTranslator()
+>>>>>>> upstream/main
  * @method static int getWeekEndsAt()
  * @method static int getWeekStartsAt()
  * @method static array getWeekendDays()
@@ -58,8 +75,13 @@ use Illuminate\Support\DateFactory;
  * @method static \Illuminate\Support\Carbon maxValue()
  * @method static \Illuminate\Support\Carbon minValue()
  * @method static void mixin($mixin)
+<<<<<<< HEAD
  * @method static \Illuminate\Support\Carbon now($timezone = null)
  * @method static \Illuminate\Support\Carbon parse($time = null, $timezone = null)
+=======
+ * @method static \Illuminate\Support\Carbon now($tz = null)
+ * @method static \Illuminate\Support\Carbon parse($time = null, $tz = null)
+>>>>>>> upstream/main
  * @method static string pluralUnit(string $unit)
  * @method static void resetMonthsOverflow()
  * @method static void resetToStringFormat()
@@ -70,7 +92,11 @@ use Illuminate\Support\DateFactory;
  * @method static void setMidDayAt($hour)
  * @method static void setTestNow($testNow = null)
  * @method static void setToStringFormat($format)
+<<<<<<< HEAD
  * @method static void setTranslator(\Symfony\Contracts\Translation\TranslatorInterface $translator)
+=======
+ * @method static void setTranslator(\Symfony\Component\Translation\TranslatorInterface $translator)
+>>>>>>> upstream/main
  * @method static void setUtf8($utf8)
  * @method static void setWeekEndsAt($day)
  * @method static void setWeekStartsAt($day)
@@ -78,12 +104,21 @@ use Illuminate\Support\DateFactory;
  * @method static bool shouldOverflowMonths()
  * @method static bool shouldOverflowYears()
  * @method static string singularUnit(string $unit)
+<<<<<<< HEAD
  * @method static \Illuminate\Support\Carbon today($timezone = null)
  * @method static \Illuminate\Support\Carbon tomorrow($timezone = null)
  * @method static void useMonthsOverflow($monthsOverflow = true)
  * @method static void useStrictMode($strictModeEnabled = true)
  * @method static void useYearsOverflow($yearsOverflow = true)
  * @method static \Illuminate\Support\Carbon yesterday($timezone = null)
+=======
+ * @method static \Illuminate\Support\Carbon today($tz = null)
+ * @method static \Illuminate\Support\Carbon tomorrow($tz = null)
+ * @method static void useMonthsOverflow($monthsOverflow = true)
+ * @method static void useStrictMode($strictModeEnabled = true)
+ * @method static void useYearsOverflow($yearsOverflow = true)
+ * @method static \Illuminate\Support\Carbon yesterday($tz = null)
+>>>>>>> upstream/main
  *
  * @see \Illuminate\Support\DateFactory
  */

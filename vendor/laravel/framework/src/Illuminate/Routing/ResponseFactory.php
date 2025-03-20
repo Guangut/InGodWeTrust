@@ -7,7 +7,10 @@ use Illuminate\Contracts\Routing\ResponseFactory as FactoryContract;
 use Illuminate\Contracts\View\Factory as ViewFactory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
+<<<<<<< HEAD
 use Illuminate\Http\StreamedEvent;
+=======
+>>>>>>> upstream/main
 use Illuminate\Routing\Exceptions\StreamedResponseException;
 use Illuminate\Support\Js;
 use Illuminate\Support\Str;
@@ -125,10 +128,17 @@ class ResponseFactory implements FactoryContract
      *
      * @param  \Closure  $callback
      * @param  array  $headers
+<<<<<<< HEAD
      * @param  \Illuminate\Http\StreamedEvent|string|null  $endStreamWith
      * @return \Symfony\Component\HttpFoundation\StreamedResponse
      */
     public function eventStream(Closure $callback, array $headers = [], StreamedEvent|string|null $endStreamWith = '</stream>')
+=======
+     * @param  string  $endStreamWith
+     * @return \Symfony\Component\HttpFoundation\StreamedResponse
+     */
+    public function eventStream(Closure $callback, array $headers = [], string $endStreamWith = '</stream>')
+>>>>>>> upstream/main
     {
         return $this->stream(function () use ($callback, $endStreamWith) {
             foreach ($callback() as $message) {
@@ -136,6 +146,7 @@ class ResponseFactory implements FactoryContract
                     break;
                 }
 
+<<<<<<< HEAD
                 $event = 'update';
 
                 if ($message instanceof StreamedEvent) {
@@ -143,11 +154,17 @@ class ResponseFactory implements FactoryContract
                     $message = $message->data;
                 }
 
+=======
+>>>>>>> upstream/main
                 if (! is_string($message) && ! is_numeric($message)) {
                     $message = Js::encode($message);
                 }
 
+<<<<<<< HEAD
                 echo "event: $event\n";
+=======
+                echo "event: update\n";
+>>>>>>> upstream/main
                 echo 'data: '.$message;
                 echo "\n\n";
 
@@ -155,6 +172,7 @@ class ResponseFactory implements FactoryContract
                 flush();
             }
 
+<<<<<<< HEAD
             if (filled($endStreamWith)) {
                 $endEvent = 'update';
 
@@ -170,6 +188,14 @@ class ResponseFactory implements FactoryContract
                 ob_flush();
                 flush();
             }
+=======
+            echo "event: update\n";
+            echo 'data: '.$endStreamWith;
+            echo "\n\n";
+
+            ob_flush();
+            flush();
+>>>>>>> upstream/main
         }, 200, array_merge($headers, [
             'Content-Type' => 'text/event-stream',
             'Cache-Control' => 'no-cache',

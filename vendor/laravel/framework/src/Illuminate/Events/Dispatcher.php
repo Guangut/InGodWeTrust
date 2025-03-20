@@ -344,8 +344,12 @@ class Dispatcher implements DispatcherContract
     protected function broadcastWhen($event)
     {
         return method_exists($event, 'broadcastWhen')
+<<<<<<< HEAD
             ? $event->broadcastWhen()
             : true;
+=======
+                ? $event->broadcastWhen() : true;
+>>>>>>> upstream/main
     }
 
     /**
@@ -373,8 +377,13 @@ class Dispatcher implements DispatcherContract
         );
 
         return class_exists($eventName, false)
+<<<<<<< HEAD
             ? $this->addInterfaceListeners($eventName, $listeners)
             : $listeners;
+=======
+                    ? $this->addInterfaceListeners($eventName, $listeners)
+                    : $listeners;
+>>>>>>> upstream/main
     }
 
     /**
@@ -490,8 +499,13 @@ class Dispatcher implements DispatcherContract
     protected function createClassCallable($listener)
     {
         [$class, $method] = is_array($listener)
+<<<<<<< HEAD
             ? $listener
             : $this->parseClassCallable($listener);
+=======
+                            ? $listener
+                            : $this->parseClassCallable($listener);
+>>>>>>> upstream/main
 
         if (! method_exists($class, $method)) {
             $method = '__invoke';
@@ -504,8 +518,13 @@ class Dispatcher implements DispatcherContract
         $listener = $this->container->make($class);
 
         return $this->handlerShouldBeDispatchedAfterDatabaseTransactions($listener)
+<<<<<<< HEAD
             ? $this->createCallbackForListenerRunningAfterCommits($listener, $method)
             : [$listener, $method];
+=======
+                    ? $this->createCallbackForListenerRunningAfterCommits($listener, $method)
+                    : [$listener, $method];
+>>>>>>> upstream/main
     }
 
     /**

@@ -47,6 +47,7 @@ trait ReflectsClosures
     {
         $reflection = new ReflectionFunction($closure);
 
+<<<<<<< HEAD
         $types = (new Collection($reflection->getParameters()))
             ->mapWithKeys(function ($parameter) {
                 if ($parameter->isVariadic()) {
@@ -58,6 +59,15 @@ trait ReflectsClosures
             ->filter()
             ->values()
             ->all();
+=======
+        $types = (new Collection($reflection->getParameters()))->mapWithKeys(function ($parameter) {
+            if ($parameter->isVariadic()) {
+                return [$parameter->getName() => null];
+            }
+
+            return [$parameter->getName() => Reflector::getParameterClassNames($parameter)];
+        })->filter()->values()->all();
+>>>>>>> upstream/main
 
         if (empty($types)) {
             throw new RuntimeException('The given Closure has no parameters.');
@@ -82,6 +92,7 @@ trait ReflectsClosures
     {
         $reflection = new ReflectionFunction($closure);
 
+<<<<<<< HEAD
         return (new Collection($reflection->getParameters()))
             ->mapWithKeys(function ($parameter) {
                 if ($parameter->isVariadic()) {
@@ -91,5 +102,14 @@ trait ReflectsClosures
                 return [$parameter->getName() => Reflector::getParameterClassName($parameter)];
             })
             ->all();
+=======
+        return (new Collection($reflection->getParameters()))->mapWithKeys(function ($parameter) {
+            if ($parameter->isVariadic()) {
+                return [$parameter->getName() => null];
+            }
+
+            return [$parameter->getName() => Reflector::getParameterClassName($parameter)];
+        })->all();
+>>>>>>> upstream/main
     }
 }

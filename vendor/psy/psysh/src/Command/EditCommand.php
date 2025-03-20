@@ -11,7 +11,10 @@
 
 namespace Psy\Command;
 
+<<<<<<< HEAD
 use Psy\ConfigPaths;
+=======
+>>>>>>> upstream/main
 use Psy\Context;
 use Psy\ContextAware;
 use Symfony\Component\Console\Input\InputArgument;
@@ -91,7 +94,10 @@ class EditCommand extends Command implements ContextAware
         $shouldRemoveFile = false;
 
         if ($filePath === null) {
+<<<<<<< HEAD
             ConfigPaths::ensureDir($this->runtimeDir);
+=======
+>>>>>>> upstream/main
             $filePath = \tempnam($this->runtimeDir, 'psysh-edit-command');
             $shouldRemoveFile = true;
         }

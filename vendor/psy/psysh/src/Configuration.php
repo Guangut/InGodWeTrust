@@ -633,8 +633,13 @@ class Configuration
     {
         $runtimeDir = $this->configPaths->runtimeDir();
 
+<<<<<<< HEAD
         if ($create) {
             if (!@ConfigPaths::ensureDir($runtimeDir)) {
+=======
+        if ($create && !\is_dir($runtimeDir)) {
+            if (!@\mkdir($runtimeDir, 0700, true)) {
+>>>>>>> upstream/main
                 throw new RuntimeException(\sprintf('Unable to create PsySH runtime directory. Make sure PHP is able to write to %s in order to continue.', \dirname($runtimeDir)));
             }
         }

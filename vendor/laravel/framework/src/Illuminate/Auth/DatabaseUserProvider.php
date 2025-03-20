@@ -74,8 +74,12 @@ class DatabaseUserProvider implements UserProvider
         );
 
         return $user && $user->getRememberToken() && hash_equals($user->getRememberToken(), $token)
+<<<<<<< HEAD
             ? $user
             : null;
+=======
+                    ? $user : null;
+>>>>>>> upstream/main
     }
 
     /**

@@ -171,8 +171,13 @@ class PendingBatch
     public function then($callback)
     {
         $this->options['then'][] = $callback instanceof Closure
+<<<<<<< HEAD
             ? new SerializableClosure($callback)
             : $callback;
+=======
+                        ? new SerializableClosure($callback)
+                        : $callback;
+>>>>>>> upstream/main
 
         return $this;
     }
@@ -196,8 +201,13 @@ class PendingBatch
     public function catch($callback)
     {
         $this->options['catch'][] = $callback instanceof Closure
+<<<<<<< HEAD
             ? new SerializableClosure($callback)
             : $callback;
+=======
+                    ? new SerializableClosure($callback)
+                    : $callback;
+>>>>>>> upstream/main
 
         return $this;
     }
@@ -221,8 +231,13 @@ class PendingBatch
     public function finally($callback)
     {
         $this->options['finally'][] = $callback instanceof Closure
+<<<<<<< HEAD
             ? new SerializableClosure($callback)
             : $callback;
+=======
+                    ? new SerializableClosure($callback)
+                    : $callback;
+>>>>>>> upstream/main
 
         return $this;
     }

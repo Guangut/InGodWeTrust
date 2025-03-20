@@ -483,6 +483,7 @@ class Handler implements ExceptionHandlerContract
         $exceptions = Arr::wrap($exceptions);
 
         $this->dontReport = (new Collection($this->dontReport))
+<<<<<<< HEAD
             ->reject(fn ($ignored) => in_array($ignored, $exceptions))
             ->values()
             ->all();
@@ -491,6 +492,12 @@ class Handler implements ExceptionHandlerContract
             ->reject(fn ($ignored) => in_array($ignored, $exceptions))
             ->values()
             ->all();
+=======
+            ->reject(fn ($ignored) => in_array($ignored, $exceptions))->values()->all();
+
+        $this->internalDontReport = (new Collection($this->internalDontReport))
+            ->reject(fn ($ignored) => in_array($ignored, $exceptions))->values()->all();
+>>>>>>> upstream/main
 
         return $this;
     }
@@ -706,8 +713,13 @@ class Handler implements ExceptionHandlerContract
     protected function renderExceptionResponse($request, Throwable $e)
     {
         return $this->shouldReturnJson($request, $e)
+<<<<<<< HEAD
             ? $this->prepareJsonResponse($request, $e)
             : $this->prepareResponse($request, $e);
+=======
+                    ? $this->prepareJsonResponse($request, $e)
+                    : $this->prepareResponse($request, $e);
+>>>>>>> upstream/main
     }
 
     /**
@@ -720,8 +732,13 @@ class Handler implements ExceptionHandlerContract
     protected function unauthenticated($request, AuthenticationException $exception)
     {
         return $this->shouldReturnJson($request, $exception)
+<<<<<<< HEAD
             ? response()->json(['message' => $exception->getMessage()], 401)
             : redirect()->guest($exception->redirectTo($request) ?? route('login'));
+=======
+                    ? response()->json(['message' => $exception->getMessage()], 401)
+                    : redirect()->guest($exception->redirectTo($request) ?? route('login'));
+>>>>>>> upstream/main
     }
 
     /**
@@ -738,8 +755,13 @@ class Handler implements ExceptionHandlerContract
         }
 
         return $this->shouldReturnJson($request, $e)
+<<<<<<< HEAD
             ? $this->invalidJson($request, $e)
             : $this->invalid($request, $e);
+=======
+                    ? $this->invalidJson($request, $e)
+                    : $this->invalid($request, $e);
+>>>>>>> upstream/main
     }
 
     /**

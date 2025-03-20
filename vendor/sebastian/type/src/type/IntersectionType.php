@@ -9,6 +9,10 @@
  */
 namespace SebastianBergmann\Type;
 
+<<<<<<< HEAD
+=======
+use function array_is_list;
+>>>>>>> upstream/main
 use function assert;
 use function count;
 use function implode;
@@ -34,7 +38,11 @@ final class IntersectionType extends Type
         $this->ensureOnlyValidTypes(...$types);
         $this->ensureNoDuplicateTypes(...$types);
 
+<<<<<<< HEAD
         assert(!empty($types));
+=======
+        assert(array_is_list($types) && !empty($types));
+>>>>>>> upstream/main
 
         $this->types = $types;
     }

@@ -335,8 +335,13 @@ class EventFake implements Dispatcher, Fake
         return (new Collection($this->eventsToFake))
             ->filter(function ($event) use ($eventName, $payload) {
                 return $event instanceof Closure
+<<<<<<< HEAD
                     ? $event($eventName, $payload)
                     : $event === $eventName;
+=======
+                            ? $event($eventName, $payload)
+                            : $event === $eventName;
+>>>>>>> upstream/main
             })
             ->isNotEmpty();
     }

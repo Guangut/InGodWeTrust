@@ -211,8 +211,13 @@ class ModelMakeCommand extends GeneratorCommand
     protected function resolveStubPath($stub)
     {
         return file_exists($customPath = $this->laravel->basePath(trim($stub, '/')))
+<<<<<<< HEAD
             ? $customPath
             : __DIR__.$stub;
+=======
+                        ? $customPath
+                        : __DIR__.$stub;
+>>>>>>> upstream/main
     }
 
     /**

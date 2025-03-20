@@ -3,7 +3,10 @@
 namespace Illuminate\Validation;
 
 use Illuminate\Contracts\Support\Arrayable;
+<<<<<<< HEAD
 use Illuminate\Support\Arr;
+=======
+>>>>>>> upstream/main
 use Illuminate\Support\Traits\Macroable;
 use Illuminate\Validation\Rules\ArrayRule;
 use Illuminate\Validation\Rules\Can;
@@ -245,6 +248,7 @@ class Rule
     {
         return new Numeric;
     }
+<<<<<<< HEAD
 
     /**
      * Compile a set of rules for an attribute.
@@ -274,4 +278,6 @@ class Rule
 
         return $parser->explode(ValidationRuleParser::filterConditionalRules($rules, $data));
     }
+=======
+>>>>>>> upstream/main
 }

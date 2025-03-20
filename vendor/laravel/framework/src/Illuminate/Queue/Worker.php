@@ -617,8 +617,13 @@ class Worker
         $backoff = explode(
             ',',
             method_exists($job, 'backoff') && ! is_null($job->backoff())
+<<<<<<< HEAD
                 ? $job->backoff()
                 : $options->backoff
+=======
+                        ? $job->backoff()
+                        : $options->backoff
+>>>>>>> upstream/main
         );
 
         return (int) ($backoff[$job->attempts() - 1] ?? last($backoff));

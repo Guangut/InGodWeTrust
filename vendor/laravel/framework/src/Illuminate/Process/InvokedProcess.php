@@ -113,6 +113,7 @@ class InvokedProcess implements InvokedProcessContract
     }
 
     /**
+<<<<<<< HEAD
      * Ensure that the process has not timed out.
      *
      * @return void
@@ -129,6 +130,8 @@ class InvokedProcess implements InvokedProcessContract
     }
 
     /**
+=======
+>>>>>>> upstream/main
      * Wait for the process to finish.
      *
      * @param  callable|null  $output

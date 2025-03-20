@@ -41,8 +41,13 @@ class JobMakeCommand extends GeneratorCommand
     protected function getStub()
     {
         return $this->option('sync')
+<<<<<<< HEAD
             ? $this->resolveStubPath('/stubs/job.stub')
             : $this->resolveStubPath('/stubs/job.queued.stub');
+=======
+                        ? $this->resolveStubPath('/stubs/job.stub')
+                        : $this->resolveStubPath('/stubs/job.queued.stub');
+>>>>>>> upstream/main
     }
 
     /**
@@ -54,8 +59,13 @@ class JobMakeCommand extends GeneratorCommand
     protected function resolveStubPath($stub)
     {
         return file_exists($customPath = $this->laravel->basePath(trim($stub, '/')))
+<<<<<<< HEAD
             ? $customPath
             : __DIR__.$stub;
+=======
+                        ? $customPath
+                        : __DIR__.$stub;
+>>>>>>> upstream/main
     }
 
     /**

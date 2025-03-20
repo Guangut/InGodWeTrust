@@ -255,8 +255,13 @@ trait ManagesTransactions
         // that this given transaction level is valid before attempting to rollback to
         // that level. If it's not we will just return out and not attempt anything.
         $toLevel = is_null($toLevel)
+<<<<<<< HEAD
             ? $this->transactions - 1
             : $toLevel;
+=======
+                    ? $this->transactions - 1
+                    : $toLevel;
+>>>>>>> upstream/main
 
         if ($toLevel < 0 || $toLevel >= $this->transactions) {
             return;

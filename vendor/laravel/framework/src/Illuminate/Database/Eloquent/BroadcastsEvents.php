@@ -130,6 +130,7 @@ trait BroadcastsEvents
     {
         return tap($this->newBroadcastableEvent($event), function ($event) {
             $event->connection = property_exists($this, 'broadcastConnection')
+<<<<<<< HEAD
                 ? $this->broadcastConnection
                 : $this->broadcastConnection();
 
@@ -140,6 +141,18 @@ trait BroadcastsEvents
             $event->afterCommit = property_exists($this, 'broadcastAfterCommit')
                 ? $this->broadcastAfterCommit
                 : $this->broadcastAfterCommit();
+=======
+                            ? $this->broadcastConnection
+                            : $this->broadcastConnection();
+
+            $event->queue = property_exists($this, 'broadcastQueue')
+                            ? $this->broadcastQueue
+                            : $this->broadcastQueue();
+
+            $event->afterCommit = property_exists($this, 'broadcastAfterCommit')
+                            ? $this->broadcastAfterCommit
+                            : $this->broadcastAfterCommit();
+>>>>>>> upstream/main
         });
     }
 

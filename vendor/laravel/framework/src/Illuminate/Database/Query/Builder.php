@@ -2400,8 +2400,13 @@ class Builder implements BuilderContract
      * Add a "having" clause to the query.
      *
      * @param  \Illuminate\Contracts\Database\Query\Expression|\Closure|string  $column
+<<<<<<< HEAD
      * @param  \DateTimeInterface|string|int|float|null  $operator
      * @param  \DateTimeInterface|string|int|float|null  $value
+=======
+     * @param  string|int|float|null  $operator
+     * @param  string|int|float|null  $value
+>>>>>>> upstream/main
      * @param  string  $boolean
      * @return $this
      */
@@ -2452,8 +2457,13 @@ class Builder implements BuilderContract
      * Add an "or having" clause to the query.
      *
      * @param  \Illuminate\Contracts\Database\Query\Expression|\Closure|string  $column
+<<<<<<< HEAD
      * @param  \DateTimeInterface|string|int|float|null  $operator
      * @param  \DateTimeInterface|string|int|float|null  $value
+=======
+     * @param  string|int|float|null  $operator
+     * @param  string|int|float|null  $value
+>>>>>>> upstream/main
      * @return $this
      */
     public function orHaving($column, $operator = null, $value = null)
@@ -2850,9 +2860,16 @@ class Builder implements BuilderContract
     protected function removeExistingOrdersFor($column)
     {
         return (new Collection($this->orders))
+<<<<<<< HEAD
             ->reject(fn ($order) => isset($order['column']) && $order['column'] === $column)
             ->values()
             ->all();
+=======
+            ->reject(function ($order) use ($column) {
+                return isset($order['column'])
+                       ? $order['column'] === $column : false;
+            })->values()->all();
+>>>>>>> upstream/main
     }
 
     /**
@@ -3141,7 +3158,11 @@ class Builder implements BuilderContract
      * @param  string  $pageName
      * @param  int|null  $page
      * @param  \Closure|int|null  $total
+<<<<<<< HEAD
      * @return \Illuminate\Pagination\LengthAwarePaginator
+=======
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+>>>>>>> upstream/main
      */
     public function paginate($perPage = 15, $columns = ['*'], $pageName = 'page', $page = null, $total = null)
     {
@@ -3304,8 +3325,12 @@ class Builder implements BuilderContract
     {
         return array_map(function ($column) {
             return is_string($column) && ($aliasPosition = stripos($column, ' as ')) !== false
+<<<<<<< HEAD
                 ? substr($column, 0, $aliasPosition)
                 : $column;
+=======
+                    ? substr($column, 0, $aliasPosition) : $column;
+>>>>>>> upstream/main
         }, $columns);
     }
 
@@ -3377,8 +3402,13 @@ class Builder implements BuilderContract
 
         return $this->applyAfterQueryCallbacks(
             is_array($queryResult[0])
+<<<<<<< HEAD
                 ? $this->pluckFromArrayColumn($queryResult, $column, $key)
                 : $this->pluckFromObjectColumn($queryResult, $column, $key)
+=======
+                    ? $this->pluckFromArrayColumn($queryResult, $column, $key)
+                    : $this->pluckFromObjectColumn($queryResult, $column, $key)
+>>>>>>> upstream/main
         );
     }
 
@@ -3633,8 +3663,12 @@ class Builder implements BuilderContract
         // cast it to one. When it does we will cast it to a float since it needs to be
         // cast to the expected data type for the developers out of pure convenience.
         return ! str_contains((string) $result, '.')
+<<<<<<< HEAD
             ? (int) $result
             : (float) $result;
+=======
+                ? (int) $result : (float) $result;
+>>>>>>> upstream/main
     }
 
     /**
@@ -4071,8 +4105,13 @@ class Builder implements BuilderContract
     public function getColumns()
     {
         return ! is_null($this->columns)
+<<<<<<< HEAD
             ? array_map(fn ($column) => $this->grammar->getValue($column), $this->columns)
             : [];
+=======
+                ? array_map(fn ($column) => $this->grammar->getValue($column), $this->columns)
+                : [];
+>>>>>>> upstream/main
     }
 
     /**

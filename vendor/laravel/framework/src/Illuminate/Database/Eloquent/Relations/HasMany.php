@@ -38,8 +38,13 @@ class HasMany extends HasOneOrMany
     public function getResults()
     {
         return ! is_null($this->getParentKey())
+<<<<<<< HEAD
             ? $this->query->get()
             : $this->related->newCollection();
+=======
+                ? $this->query->get()
+                : $this->related->newCollection();
+>>>>>>> upstream/main
     }
 
     /** @inheritDoc */

@@ -342,7 +342,11 @@ trait EnumeratesValues
      *
      * @template TEnsureOfType
      *
+<<<<<<< HEAD
      * @param  class-string<TEnsureOfType>|array<array-key, class-string<TEnsureOfType>>|'string'|'int'|'float'|'bool'|'array'|'null'  $type
+=======
+     * @param  class-string<TEnsureOfType>|array<array-key, class-string<TEnsureOfType>>  $type
+>>>>>>> upstream/main
      * @return static<TKey, TEnsureOfType>
      *
      * @throws \UnexpectedValueException
@@ -504,11 +508,28 @@ trait EnumeratesValues
      */
     public function partition($key, $operator = null, $value = null)
     {
+<<<<<<< HEAD
         $callback = func_num_args() === 1
             ? $this->valueRetriever($key)
             : $this->operatorForWhere(...func_get_args());
 
         [$passed, $failed] = Arr::partition($this->getIterator(), $callback);
+=======
+        $passed = [];
+        $failed = [];
+
+        $callback = func_num_args() === 1
+                ? $this->valueRetriever($key)
+                : $this->operatorForWhere(...func_get_args());
+
+        foreach ($this as $key => $item) {
+            if ($callback($item, $key)) {
+                $passed[$key] = $item;
+            } else {
+                $failed[$key] = $item;
+            }
+        }
+>>>>>>> upstream/main
 
         return new static([new static($passed), new static($failed)]);
     }
@@ -535,10 +556,15 @@ trait EnumeratesValues
     /**
      * Get the sum of the given values.
      *
+<<<<<<< HEAD
      * @template TReturnType
      *
      * @param  (callable(TValue): TReturnType)|string|null  $callback
      * @return ($callback is callable ? TReturnType : mixed)
+=======
+     * @param  (callable(TValue): mixed)|string|null  $callback
+     * @return mixed
+>>>>>>> upstream/main
      */
     public function sum($callback = null)
     {
@@ -993,8 +1019,13 @@ trait EnumeratesValues
     public function __toString()
     {
         return $this->escapeWhenCastingToString
+<<<<<<< HEAD
             ? e($this->toJson())
             : $this->toJson();
+=======
+                    ? e($this->toJson())
+                    : $this->toJson();
+>>>>>>> upstream/main
     }
 
     /**

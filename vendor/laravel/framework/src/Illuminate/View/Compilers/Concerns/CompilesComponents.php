@@ -25,8 +25,13 @@ trait CompilesComponents
     protected function compileComponent($expression)
     {
         [$component, $alias, $data] = str_contains($expression, ',')
+<<<<<<< HEAD
             ? array_map(trim(...), explode(',', trim($expression, '()'), 3)) + ['', '', '']
             : [trim($expression, '()'), '', ''];
+=======
+                    ? array_map(trim(...), explode(',', trim($expression, '()'), 3)) + ['', '', '']
+                    : [trim($expression, '()'), '', ''];
+>>>>>>> upstream/main
 
         $component = trim($component, '\'"');
 
@@ -215,8 +220,14 @@ unset(\$__defined_vars); ?>";
         }
 
         return is_string($value) ||
+<<<<<<< HEAD
             (is_object($value) && ! $value instanceof ComponentAttributeBag && method_exists($value, '__toString'))
                 ? e($value)
                 : $value;
+=======
+               (is_object($value) && ! $value instanceof ComponentAttributeBag && method_exists($value, '__toString'))
+                        ? e($value)
+                        : $value;
+>>>>>>> upstream/main
     }
 }

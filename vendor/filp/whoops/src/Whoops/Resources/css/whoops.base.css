@@ -558,6 +558,7 @@ pre.sf-dump {
       .search-for-help li a svg path {
         background-size: contain;
       }
+<<<<<<< HEAD
 
 .line-numbers-rows span {
   pointer-events: auto;
@@ -566,3 +567,5 @@ pre.sf-dump {
 .line-numbers-rows span:hover {
   text-decoration: underline;
 }
+=======
+>>>>>>> upstream/main

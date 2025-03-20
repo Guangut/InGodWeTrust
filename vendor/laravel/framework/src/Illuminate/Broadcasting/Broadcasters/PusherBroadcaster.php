@@ -110,8 +110,13 @@ class PusherBroadcaster extends Broadcaster
         $user = $this->retrieveUser($request, $channelName);
 
         $broadcastIdentifier = method_exists($user, 'getAuthIdentifierForBroadcasting')
+<<<<<<< HEAD
             ? $user->getAuthIdentifierForBroadcasting()
             : $user->getAuthIdentifier();
+=======
+                        ? $user->getAuthIdentifierForBroadcasting()
+                        : $user->getAuthIdentifier();
+>>>>>>> upstream/main
 
         return $this->decodePusherResponse(
             $request,
